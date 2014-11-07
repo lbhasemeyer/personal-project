@@ -12,50 +12,42 @@
     <title>Mucklucks</title>
   </head>
 
-
-
-
   <body>
     <div class="navbar-wrapper">
-      <div class="container">
         <nav class="navbar navbar navbar-static-top" role="navigation">
-          <div class="container">
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><%= link_to "Home", root_path %></li>
+                <li><%= link_to "About", about_path %></li>
                 <li><a href="#contact">Contact</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                       <li><a href="#">Action</a></li>
                       <li><a href="#">Another action</a></li>
-                      <li><a href="#">Something else here</a></li>
+                      <li><p class="navbar-brand"><a href="#">Something else here</a></p></li>
                     </ul>
-                <li><font color="orange", family="Good Times", size="6em">Mucklucks</font></li>
                 </li>
+                <li class="navbar-brand"><font color="orange", size="10em">mucklucks</font></li>
               </ul>
-            </div>
           </div>
         </nav>
-      </div>
     </div>
 
     <%= yield %>
 
     <footer class="pull-right">
-      <%= link_to "https://www.linkedin.com/in/laurahasemeyer/" do %>
-        <% image_tag("LinkedIn.png", width: "40em") %>
-      <% end %>
-      <%= link_to "https://github.com/lbhasemeyer" do %>
-        <% image_tag("GitHub.png", width: "40em") %>
-      <% end %>
-      <%= link_to "https://twitter.com/lkbhas" do %>
-        <% image_tag("Twitter.png", width: "40em") %>
-      <% end %>
+        <%= link_to "https://www.linkedin.com/in/laurahasemeyer/" do %>
+          <% image_tag("LinkedIn.png", width: "40em") %>
+        <% end %>
+        <%= link_to "https://github.com/lbhasemeyer" do %>
+          <% image_tag("GitHub.png", width: "40em") %>
+        <% end %>
+        <%= link_to "https://twitter.com/lkbhas" do %>
+          <% image_tag("Twitter.png", width: "40em") %>
+        <% end %>
     </footer>
   </div>
-
 
     <!-- Bootstrap core JavaScript.  Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
