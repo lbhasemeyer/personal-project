@@ -17,15 +17,28 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.navbar-brand {
+  float: none;
+}
+
+.navbar-center {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  text-align: center;
+  margin: auto;
+  height:100%;
+}
 
 nav.navbar.navbar-static-top {
   a {color: gray;}
 }
 
-.navbar-brand {
- left: 70%; margin-left: -100px;
-}
-
 .text-muted {
   color: orange;
+}
+
+nav.navbar.navbar-default {
+  background-color: white;
 }
