@@ -1,0 +1,32 @@
+<h1>New User</h1>
+
+<%= form_for @user do |t| %>
+
+<div>
+<%= t.label :first_name %>
+<%= t.text_field :first_name %>
+</div>
+
+<div>
+<%= t.label :last_name %>
+<%= t.text_field :last_name %>
+</div>
+
+<div>
+<%= t.label :email %>
+<%= t.email_field :email %>
+</div>
+
+<div>
+<%= t.label :password %>
+<%= t.password_field :password %>
+</div>
+
+<div>
+<%= t.label :password_confirmation %>
+<%= t.password_field :password_confirmation %>
+</div>
+
+<%= t.submit %>
+
+<% end %>

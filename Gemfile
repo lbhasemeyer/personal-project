@@ -38,6 +38,7 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
+gem 'bcrypt', '~> 3.1.7'
 
 gem 'rails_12factor', group: :production
 gem 'pg', group: [ :production, :development ]
