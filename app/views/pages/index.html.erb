@@ -18,7 +18,7 @@
         <div class="col-lg-4">
           <%= image_tag("Chacos.jpeg", :class => "img-circle",
               :style => "width: 200px; height: 200px;") %>
-          <h2>Mucklucks</h2>
+          <h2>mucklucks</h2>
           <p>Mucklucks was created as a haven for travelers and wanderlusters.
              We believe the best travel knowledge comes from people who have been there.
              Through honest opinions, advice, blogs, pictures, and popular travel sites,
@@ -28,21 +28,18 @@
         <div class="col-lg-4">
           <%= image_tag("Bangladesh.jpeg", :class => "img-circle",
               :style => "width: 200px; height: 200px;") %>
-          <h2>Public Map</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-              eget lacinia odio sem nec elit. Cras mattis consectetur purus sit
-              amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-              condimentum nibh.</p>
+          <h2>public map</h2>
+          <p>The public map is the ultimate travel asset.  Simply click on a country
+             to glean - or donate - travel knowledge to other Muckluck users.</p>
           <p><a class="btn btn-default" href="#" role="button">More &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <%= image_tag("Myanmar.jpeg", :class => "img-circle",
               :style => "width: 200px; height: 200px;") %>
-          <h2>Private Map</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas
-              eget quam. Vestibulum id ligula porta felis euismod semper. Fusce
-              dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-              ut fermentum massa justo sit amet risus.</p>
+          <h2>private map</h2>
+          <p>The private map is ideal for storing travel photos, blogs, and memories.
+             Highlight the countries you have been to, with a personal profile of memories
+             attached to each.</p>
           <p><a class="btn btn-default" href="#" role="button">More &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
@@ -58,11 +55,47 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Donate your travel knowledge. <span class="text-muted">share</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">Gather your travel memories in one place.
+              <span class="index_links"><%= link_to "save", signup_path %></span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla.
+              Vestibulum id ligula porta felis euismod semper. Praesent commodo
+              cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
+              tellus ac cursus commodo.</p>
         </div>
         <div class="col-md-5">
+          <%= image_tag("Myanmar.jpeg", :size => "480x320") %>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-5">
           <%= image_tag("Bangladesh.jpeg", :size => "480x320") %>
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Donate your travel knowledge.
+              <span class="index_links"><%= link_to "share", signup_path %></span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla.
+              Vestibulum id ligula porta felis euismod semper. Praesent commodo
+              cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
+              tellus ac cursus commodo.</p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Gather advice from other globe-trotters.
+              <span class="index_links"><%= link_to "learn", signup_path %></span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla.
+              Vestibulum id ligula porta felis euismod semper. Praesent commodo
+              cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
+              tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5">
+          <%= image_tag("Chacos.jpeg", :size => "480x320") %>
         </div>
       </div>
 
@@ -73,20 +106,12 @@
           <%= image_tag("Chacos.jpeg", :size => "480x320") %>
         </div>
         <div class="col-md-7">
-          <h2 class="featurette-heading">Gather advice from other globe-trotters. <span class="text-muted">learn</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Gather your travel memories in one place. <span class="text-muted">save</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <%= image_tag("Myanmar.jpeg", :size => "480x320") %>
+          <h2 class="featurette-heading">Use your knowledge in the world.
+              <span class="index_links"><%= link_to "explore", signup_path %></span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla.
+              Vestibulum id ligula porta felis euismod semper. Praesent commodo
+              cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
+              tellus ac cursus commodo.</p>
         </div>
       </div>
 
