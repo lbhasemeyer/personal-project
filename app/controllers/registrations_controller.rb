@@ -6,6 +6,10 @@ class RegistrationsController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.save
+    respond_to do |format|
+      format.html { redirect_to root_path }
+    end
   end
 
 
