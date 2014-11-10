@@ -42,3 +42,7 @@ nav.navbar.navbar-static-top {
 nav.navbar.navbar-default {
   background-color: white;
 }
+
+.table-hover tbody tr:hover td {
+    background: lightgray;
+}
