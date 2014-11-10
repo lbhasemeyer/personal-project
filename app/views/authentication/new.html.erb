@@ -1,2 +1,43 @@
 <br>
 <br>
+<br>
+<%= form_tag signin_path do |f| %>
+  <div class="container">
+    <form class="form-signin" role="form">
+      <h1 class="form-signin-heading text-center">Sign Into mucklucks</h1>
+      <div class="text-danger">
+          <% if @sign_in_error %>
+        <p>
+          <%= @sign_in_error %>
+        </p>
+          <% end %>
+      </div>
+      <div>
+        <%= label_tag :email %>
+        <%= email_field_tag :email, nil, class: "form-control" %>
+      </div>
+      <div>
+        <%= label_tag :password %>
+        <%= password_field_tag :password, nil, class: "form-control" %>
+      </div>
+      <br>
+      <div>
+        <%= submit_tag "Sign Up", class:"auth-button btn btn-default" %>
+      </div>
+    </form>
+  </div>
+<% end %>
+
+<br>
+
+<h2 class="text-center">Don't have an account yet?
+    <%= link_to "Sign Up", signin_path %></h2>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
