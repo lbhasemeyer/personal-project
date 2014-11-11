@@ -26,8 +26,13 @@
               <a class="navbar-brand"><font color="orange", size="20em">mucklucks</font></a>
           </div>
           <ul class="nav navbar-nav navbar-right">
+            <% if current_user %>
+            <li><%= link_to ("#{current_user.first_name} #{current_user.last_name}"), user_path(current_user) %>
+            <li><%= link_to "Sign Out", signout_path %></li>
+            <% else %>
             <li><%= link_to "Sign In", signin_path %></li>
             <li><%= link_to "Sign Up", signup_path %></li>
+            <% end %>
           </ul>
         </div>
       </div>
