@@ -1,0 +1,2 @@
+class PublicmapsController < ApplicationController
+end
