@@ -6,13 +6,23 @@
   <div class="container">
     <form class="form-signup" role="form">
       <h1 class="form-signup-heading text-center">Sign Up for mucklucks</h1>
+
+
+      <% if @user.errors.present? %>
+        <ul class= "list list-unstyled text-danger">
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
       <div>
         <%= f.label :first_name %>
-        <%= f.text_field :first_name, class: "form-control" %>
+        <%= f.text_field :first_name, class: "form-control col-sm-4" %>
       </div>
       <div>
         <%= f.label :last_name %>
-        <%= f.text_field :last_name, class: "form-control" %>
+        <%= f.text_field :last_name, class: "form-control col-sm-4" %>
       </div>
       <div>
         <%= f.label :email %>
