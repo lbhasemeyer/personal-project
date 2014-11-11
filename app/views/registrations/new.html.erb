@@ -7,7 +7,6 @@
     <form class="form-signup" role="form">
       <h1 class="form-signup-heading text-center">Sign Up for mucklucks</h1>
 
-
       <% if @user.errors.present? %>
         <ul class= "list list-unstyled text-danger">
           <% @user.errors.full_messages.each do |message| %>

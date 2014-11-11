@@ -5,7 +5,16 @@
 <%= form_for @user, url: signup_path do |f| %>
   <div class="container">
     <form class="form-signup" role="form">
-      <h1 class="form-signup-heading text-center">Sign Up for mucklucks</h1>
+      <h1 class="form-signup-heading text-center">New User</h1>
+
+      <% if @user.errors.present? %>
+        <ul class= "list list-unstyled text-danger">
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
       <div>
         <%= f.label :first_name %>
         <%= f.text_field :first_name, class: "form-control" %>
@@ -28,16 +37,11 @@
       </div>
       <br>
       <div>
-        <%= f.submit "Sign Up", class:"auth-button btn btn-default" %>
+        <%= f.submit "Add User", class:"auth-button btn btn-default" %>
       </div>
     </form>
   </div>
 <% end %>
-
-<br>
-
-<h2 class="text-center">Already have an account?
-    <%= link_to "Sign In", signin_path %></h2>
 
 <br>
 <br>
