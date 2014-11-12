@@ -43,13 +43,13 @@ nav.navbar.navbar-default {
   background-color: white;
 }
 
-.table-hover tbody tr:hover td {
-    background: lightgray;
-}
-
 a.navbar-brand.mucklucks-logo {
   text-align: center;
   font-size: 50px;
   color: orange;
   display: block;
+}
+
+.table-hover tbody tr:hover td {
+    background: orange;
 }

@@ -1,43 +1,46 @@
 <%= notice %>
+<body class="users_index-page">
 
-<br>
-<br>
-<br>
+  <br>
+  <br>
+  <br>
 
-<div class= "container tasks_page">
-  <table class="table">
-    <h1 class="text-center">Users
-      <div class="pull-right">
-        <%= link_to "Create User", new_user_path,
-            class: "btn btn-default pull-right" %>
-      </div>
-    </h1>
+  <div class= "container tasks_page">
+    <table class="table">
+      <h1 class="text-center">Users
+        <div class="pull-right">
+          <%= link_to "Create User", new_user_path,
+              class: "btn btn-default pull-right" %>
+        </div>
+      </h1>
 
-    <hr>
+      <hr>
 
 
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @users.each do |user| %>
+      <table class="table table-hover">
+        <thead>
           <tr>
-            <td><%= link_to ("#{user.first_name} #{user.last_name}"), user_path(user) %></td>
-            <td><%= user.email %></td>
-            <td><%= link_to "Edit", edit_user_path(user), class:"auth-button btn btn-default" %></td>
-            <td><%= button_to "Delete", user, method: :delete, class:"auth-button btn btn-default" %></td>
+            <th>Name</th>
+            <th>Email</th>
+            <th></th>
+            <th></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </table
-</div>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= link_to ("#{user.first_name} #{user.last_name}"), user_path(user), class: "name_link" %></td>
+              <td><%= user.email %></td>
+              <td><%= link_to "Edit", edit_user_path(user), class:"auth-button btn btn-default" %></td>
+              <td><%= button_to "Delete", user, method: :delete, class:"auth-button btn btn-default" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </table
+  </div>
+
+</body>
 
 <br>
 <br>
