@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   root "pages#index"
   get "/about" => "pages#about", as: :about
+  get "/contact" => "pages#contact", as: :contact
 
   get "/signup" => "registrations#new", as: :signup
   post "/signup" => "registrations#create"
