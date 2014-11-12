@@ -1,2 +1,0 @@
-class PrivatemapsController < ApplicationController
-end

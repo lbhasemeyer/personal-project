@@ -30,8 +30,8 @@
           <div class="col-md-4">
             <ul class="nav navbar-nav navbar-right">
               <% if current_user %>
-                <li><%= link_to "Public Map", publicmaps_path %>
-                <li><%= link_to "Private Map", privatemaps_path %>
+                <li><%= link_to "Public Map", public_maps_path %>
+                <li><%= link_to "Private Map", private_maps_path %>
                 <li><%= link_to "Sign Out", signout_path %></li>
               <% else %>
                 <li><%= link_to "Sign In", signin_path %></li>
