@@ -29,10 +29,13 @@
         <tbody>
           <% @users.each do |user| %>
             <tr>
-              <td><%= link_to ("#{user.first_name} #{user.last_name}"), user_path(user), class: "name_link" %></td>
+              <td><%= link_to ("#{user.first_name} #{user.last_name}"),
+                  user_path(user), class: "name_link" %></td>
               <td><%= user.email %></td>
-              <td><%= link_to "Edit", edit_user_path(user), class:"auth-button btn btn-default" %></td>
-              <td><%= button_to "Delete", user, method: :delete, class:"auth-button btn btn-default" %></td>
+              <td><%= link_to "Edit", edit_user_path(user),
+                  class:"auth-button btn btn-default" %></td>
+              <td><%= button_to "Delete", user, method: :delete,
+                  class: "auth-button btn btn-default" %></td>
             </tr>
           <% end %>
         </tbody>
