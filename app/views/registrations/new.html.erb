@@ -1,53 +1,56 @@
+<body class="registrations-page">
+
+  <br>
+  <br>
+  <br>
+
+  <%= form_for @user, url: signup_path do |f| %>
+    <div class="container signin well">
+      <form class="form-signup" role="form">
+        <h1 class="form-signup-heading text-center">Sign Up for mucklucks</h1>
+
+        <% if @user.errors.present? %>
+          <ul class= "list list-unstyled text-danger">
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
+
+        <div>
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name, class: "form-control col-sm-4" %>
+        </div>
+        <div>
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name, class: "form-control col-sm-4" %>
+        </div>
+        <div>
+          <%= f.label :email %>
+          <%= f.email_field :email, class: "form-control" %>
+        </div>
+        <div>
+          <%= f.label :password %>
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+        <div>
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
+        <br>
+        <div>
+          <%= f.submit "Sign Up", class:"auth-button btn btn-default" %>
+        </div>
+      </form>
+
+      <h2 class="text-center">Already have an account?
+          <%= link_to "Sign In", signin_path %></h2>
+    </div>
+  <% end %>
+
+</body>
+
 <br>
-<br>
-<br>
-
-<%= form_for @user, url: signup_path do |f| %>
-  <div class="container">
-    <form class="form-signup" role="form">
-      <h1 class="form-signup-heading text-center">Sign Up for mucklucks</h1>
-
-      <% if @user.errors.present? %>
-        <ul class= "list list-unstyled text-danger">
-          <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      <% end %>
-
-      <div>
-        <%= f.label :first_name %>
-        <%= f.text_field :first_name, class: "form-control col-sm-4" %>
-      </div>
-      <div>
-        <%= f.label :last_name %>
-        <%= f.text_field :last_name, class: "form-control col-sm-4" %>
-      </div>
-      <div>
-        <%= f.label :email %>
-        <%= f.email_field :email, class: "form-control" %>
-      </div>
-      <div>
-        <%= f.label :password %>
-        <%= f.password_field :password, class: "form-control" %>
-      </div>
-      <div>
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, class: "form-control" %>
-      </div>
-      <br>
-      <div>
-        <%= f.submit "Sign Up", class:"auth-button btn btn-default" %>
-      </div>
-    </form>
-  </div>
-<% end %>
-
-<br>
-
-<h2 class="text-center">Already have an account?
-    <%= link_to "Sign In", signin_path %></h2>
-
 <br>
 <br>
 <br>
