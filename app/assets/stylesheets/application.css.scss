@@ -51,5 +51,15 @@ a.navbar-brand.mucklucks-logo {
 }
 
 .table-hover tbody tr:hover td {
-    background: orange;
+  background: orange;
+}
+
+.footer {
+  width: 30%;
+  height: 45px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  text-align: center;
+  background-color: white;
 }

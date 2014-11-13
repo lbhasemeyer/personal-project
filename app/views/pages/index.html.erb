@@ -12,111 +12,112 @@
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div class="container marketing">
+<div class="container marketing">
 
-      <div class="row">
-        <div class="col-lg-4">
-          <%= image_tag("Chacos.jpeg", :class => "img-circle",
-              :style => "width: 200px; height: 200px;") %>
-          <h2>mucklucks</h2>
-          <p>Mucklucks was created as a haven for travelers and wanderlusters.
-             We believe the best travel knowledge comes from people who have been there.
-             Through honest opinions, advice, blogs, pictures, and popular travel sites,
-             we hope to make travel research easy, collaborative, and fun.</p>
-          <p><a class="btn btn-default" href="#" role="button">More &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <%= image_tag("Bangladesh.jpeg", :class => "img-circle",
-              :style => "width: 200px; height: 200px;") %>
-          <h2>public map</h2>
-          <p>The public map is the ultimate travel asset.  Simply click on a country of interest
-             to glean travel knowledge from other Muckluck users.</p>
-          <p><a class="btn btn-default" href="#" role="button">More &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <%= image_tag("Myanmar.jpeg", :class => "img-circle",
-              :style => "width: 200px; height: 200px;") %>
-          <h2>private map</h2>
-          <p>The private map is ideal for storing travel photos, blogs, and memories.
-             Highlight the countries you have been to, with a personal profile of memories
-             attached to each.</p>
-          <p><a class="btn btn-default" href="#" role="button">More &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
+  <div class="row">
+    <div class="col-lg-4">
+      <%= image_tag("Chacos.jpeg", :class => "img-circle",
+          :style => "width: 200px; height: 200px;") %>
+      <h2>mucklucks</h2>
+      <p>Mucklucks was created as a haven for travelers and wanderlusters.
+         We believe the best travel knowledge comes from people who have been there.
+         Through honest opinions, advice, blogs, pictures, and popular travel sites,
+         we hope to make travel research easy, collaborative, and fun.</p>
+      <p><a class="btn btn-default" href="#" role="button">More &raquo;</a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <%= image_tag("Bangladesh.jpeg", :class => "img-circle",
+          :style => "width: 200px; height: 200px;") %>
+      <h2>public map</h2>
+      <p>The public map is the ultimate travel asset.  Simply click on a country of interest
+         to glean travel knowledge from other Muckluck users.</p>
+      <p><a class="btn btn-default" href="#" role="button">More &raquo;</a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <%= image_tag("Myanmar.jpeg", :class => "img-circle",
+          :style => "width: 200px; height: 200px;") %>
+      <h2>private map</h2>
+      <p>The private map is ideal for storing travel photos, blogs, and memories.
+         Highlight the countries you have been to, with a personal profile of memories
+         attached to each.</p>
+      <p><a class="btn btn-default" href="#" role="button">More &raquo;</a></p>
+    </div><!-- /.col-lg-4 -->
+  </div>
 
 <br>
 <br>
 <br>
 <br>
 
-      <!-- START THE FEATURETTES -->
 
-      <hr class="featurette-divider">
+  <hr class="featurette-divider">
 
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Gather your travel memories in one place.
-              <span class="index_links"><%= link_to "save", signup_path %></span></h2>
-          <p class="lead">Most people keep their travel memories spread around:
-              a blog here, a photo album there...  With the mucklucks private map
-              you can gather all your travel memories in one place.  Click
-              countries to change their color so you can visually see countries
-              you have been to and countries you have yet to explore!</p>
-        </div>
-        <div class="col-md-5">
-          <%= image_tag("Myanmar.jpeg", :size => "480x320") %>
-        </div>
-      </div>
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">Gather your travel memories in one place.
+          <span class="index_links"><%= link_to "save", signup_path %></span></h2>
+      <p class="lead">Most people keep their travel memories spread around:
+          a blog here, a photo album there...  With the mucklucks private map
+          you can gather all your travel memories in one place.  Click
+          countries to change their color so you can visually see countries
+          you have been to and countries you have yet to explore!</p>
+    </div>
+    <div class="col-md-5">
+      <%= image_tag("Myanmar.jpeg", :size => "480x320") %>
+    </div>
+  </div>
 
-      <hr class="featurette-divider">
+  <hr class="featurette-divider">
 
-      <div class="row featurette">
-        <div class="col-md-5">
-          <%= image_tag("Bangladesh.jpeg", :size => "480x320") %>
-        </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Donate your travel knowledge.
-              <span class="index_links"><%= link_to "share", signup_path %></span></h2>
-          <p class="lead">Choose photos, blogs, and advice from your personal map
-              that you would like to pass along to the travel community.  These
-              nuggets will be conglomerated to the public map to create the ultimate
-              travel resource for globe-trotters worldwide.</p>
-        </div>
-      </div>
+  <div class="row featurette">
+    <div class="col-md-5">
+      <%= image_tag("Bangladesh.jpeg", :size => "480x320") %>
+    </div>
+    <div class="col-md-7">
+      <h2 class="featurette-heading">Donate your travel knowledge.
+          <span class="index_links"><%= link_to "share", signup_path %></span></h2>
+      <p class="lead">Choose photos, blogs, and advice from your personal map
+          that you would like to pass along to the travel community.  These
+          nuggets will be conglomerated to the public map to create the ultimate
+          travel resource for globe-trotters worldwide.</p>
+    </div>
+  </div>
 
-      <hr class="featurette-divider">
+  <hr class="featurette-divider">
 
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Gather advice from other globe-trotters.
-              <span class="index_links"><%= link_to "learn", signup_path %></span></h2>
-          <p class="lead">Explore countries on the public map to get ideas and
-              advice for your future travel.  See real travelers' blogs, pictures,
-              and advice.  You will also find links to well-regarded travel resources
-              such as the CDC, US Department of State, Trip Advisor, Couchsurfing,
-              and Weatherbase.</p>
-        </div>
-        <div class="col-md-5">
-          <%= image_tag("Thailand.jpeg", :size => "480x320") %>
-        </div>
-      </div>
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">Gather advice from other globe-trotters.
+          <span class="index_links"><%= link_to "learn", signup_path %></span></h2>
+      <p class="lead">Explore countries on the public map to get ideas and
+          advice for your future travel.  See real travelers' blogs, pictures,
+          and advice.  You will also find links to well-regarded travel resources
+          such as the CDC, US Department of State, Trip Advisor, Couchsurfing,
+          and Weatherbase.</p>
+    </div>
+    <div class="col-md-5">
+      <%= image_tag("Thailand.jpeg", :size => "480x320") %>
+    </div>
+  </div>
 
-      <hr class="featurette-divider">
+  <hr class="featurette-divider">
 
-      <div class="row featurette">
-        <div class="col-md-5">
-          <%= image_tag("Chacos.jpeg", :size => "480x320") %>
-        </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Use your knowledge in the world.
-              <span class="index_links"><%= link_to "explore", signup_path %></span></h2>
-          <p class="lead">The whole point of this website is to share information
-              and get people excited about the world.  Exploration is a gift that
-              we encourage you to take hold of.  Use your newfound knowledge to
-              safely learn and explore!</p>
-        </div>
-      </div>
+  <div class="row featurette">
+    <div class="col-md-5">
+      <%= image_tag("Chacos.jpeg", :size => "480x320") %>
+    </div>
+    <div class="col-md-7">
+      <h2 class="featurette-heading">Use your knowledge in the world.
+          <span class="index_links"><%= link_to "explore", signup_path %></span></h2>
+      <p class="lead">The whole point of this website is to share information
+          and get people excited about the world.  Exploration is a gift that
+          we encourage you to take hold of.  Use your newfound knowledge to
+          safely learn and explore!</p>
+    </div>
+  </div>
 
-      <hr class="featurette-divider">
+  <hr class="featurette-divider">
 
-      <!-- /END THE FEATURETTES -->
+</div>
+
+  <!-- /END THE FEATURETTES -->
