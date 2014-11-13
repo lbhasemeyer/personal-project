@@ -4,10 +4,11 @@
   <br>
   <br>
 
-  <%= form_tag signin_path do |f| %>
-    <div class="container signup well">
-      <form class="form-signin" role="form">
-        <h1 class="form-signin-heading text-center">Sign Into mucklucks</h1>
+  <%= form_tag(signin_path, html: {class: "form-horizontal"}) do |f| %>
+    <div class="container signin well col-sm-offset-3 col-sm-6">
+
+        <h1 class="form-signin-heading text-center">Sign Into
+            <font color="orange">mucklucks</font></h1>
 
         <div class="text-danger">
             <% if @sign_in_error %>
@@ -17,33 +18,41 @@
             <% end %>
         </div>
 
-        <div>
-          <%= label_tag :email %>
-          <%= email_field_tag :email, nil, class: "form-control" %>
-        </div>
-        <div>
-          <%= label_tag :password %>
-          <%= password_field_tag :password, nil, class: "form-control" %>
-        </div>
         <br>
-        <div>
-          <%= submit_tag "Sign In", class: "auth-button btn btn-default" %>
-        </div>
-      </form>
+        <br>
 
-      <h2 class="text-center">Don't have an account yet?
+        <div class="form-group">
+            <label class="col-sm-2 control-label"><%= label_tag :email %></label>
+          <div class="col-sm-9">
+            <%= email_field_tag :email, nil, class: "col-sm-1 form-control" %>
+          </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label"><%= label_tag :password %></label>
+          <div class="col-sm-9">
+            <%= password_field_tag :password, nil, class: "col-sm-offsetcol-sm-1 form-control" %>
+          </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-5">
+          <%= submit_tag "Sign In", class: "auth-button btn btn-default" %>
+          </div>
+        </div>
+
+      <div class="form-group">
+        <h2 class="col-sm-offset-2 col-sm-8 text-center">Don't have an account yet?
           <%= link_to "Sign Up", signup_path %></h2>
+        </div>
+
     </div>
   <% end %>
 
 </body>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
