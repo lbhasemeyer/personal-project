@@ -3,8 +3,7 @@
 <br>
 
 <%= form_for @user do |f| %>
-  <div class="container">
-    <form class="form-signup" role="form">
+  <div class="container form-signup">
       <h1 class="form-signup-heading text-center">New User</h1>
 
       <% if @user.errors.present? %>
@@ -39,7 +38,6 @@
       <div>
         <%= f.submit "Add User", class:"auth-button btn btn-default" %>
       </div>
-    </form>
   </div>
 <% end %>
 
