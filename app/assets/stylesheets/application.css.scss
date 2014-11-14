@@ -17,6 +17,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+html, body {
+  height: 100%;
+}
+
 .navbar-brand {
   float: none;
 }
@@ -57,9 +61,8 @@ a.navbar-brand.mucklucks-logo {
 .footer {
   width: 30%;
   height: 45px;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
+  bottom: 0;
+  position: fixed;
   text-align: center;
   background-color: white;
 }
