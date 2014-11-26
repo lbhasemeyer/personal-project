@@ -70,9 +70,9 @@ feature "users" do
       click_on "Sign In"
       fill_in "Email", with: "magic@schhoolbus.com"
       fill_in "Password", with: "iguana"
-      expect(page).to have_content("Public Map")
-      expect(page).to have_content("Private Map")
-      expect(page).to have_content("Sign Out")
+      expect(page).to have_link("Public Map")
+      expect(page).to have_link("Private Map")
+      expect(page).to have_link("Sign Out")
   end
 
   scenario "User signs in - email and password don't match" do
@@ -101,9 +101,9 @@ feature "users" do
     fill_in "Email", with: "MAGIC@SCHOOLBUS.com"
     fill_in "Password", with: "iguana"
     click_button "Sign In"
-    expect(page).to have_content("Public Map")
-    expect(page).to have_content("Private Map")
-    expect(page).to have_content("Sign Out")
+    expect(page).to have_link("Public Map")
+    expect(page).to have_link("Private Map")
+    expect(page).to have_link("Sign Out")
   end
 
 end
