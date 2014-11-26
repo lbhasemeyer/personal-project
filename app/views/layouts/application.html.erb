@@ -43,7 +43,11 @@
       </div>
     </nav>
 
-    <%= notice %>
+    <% if notice %>
+        <div class="alert alert-info text-center" role= "alert">
+            <strong><%= notice %></strong>
+        </div>
+      <% end %>
 
     <%= yield %>
 

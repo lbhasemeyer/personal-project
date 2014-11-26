@@ -35,7 +35,7 @@
             <td><%= link_to "Edit", edit_user_path(user),
                 class:"auth-button btn btn-default" %></td>
             <td><%= button_to "Delete", user, method: :delete,
-                class: "auth-button btn btn-default" %></td>
+                data: { confirm: "Are you sure?"}, class: "auth-button btn btn-default" %></td>
           </tr>
         <% end %>
       </tbody>
