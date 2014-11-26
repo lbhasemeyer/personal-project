@@ -31,3 +31,5 @@ group :development, :test do
   gem "capybara"
   gem 'launchy'
 end
+
+gem 'carrierwave', '~>0.10.0'
