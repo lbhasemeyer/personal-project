@@ -16,3 +16,9 @@ div.jumbotron.contact.text-center {
 a.navbar-brand.mucklucks-logo:hover {
   color: orange;
 }
+
+a.disabled {
+   pointer-events: none;
+   cursor: default;
+   color: black;
+}
