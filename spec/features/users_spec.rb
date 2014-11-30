@@ -6,7 +6,7 @@ feature "users" do
       visit root_path
       click_on "Users"
       click_on "Create User"
-      click_on "Add User"
+      click_on "Create User"
       expect(page).to have_content("First name can't be blank")
       expect(page).to have_content("Last name can't be blank")
       expect(page).to have_content("Email can't be blank")
@@ -22,7 +22,7 @@ feature "users" do
       fill_in "Email", with: "anchor@man.com"
       fill_in "Password", with: "sandiego"
       fill_in "Password confirmation", with: "whale"
-      click_on "Add User"
+      click_on "Create User"
       expect(page).to have_content("Password confirmation doesn't match Password")
   end
 
@@ -41,7 +41,7 @@ feature "users" do
     fill_in "Email", with: "paris@skunk.com"
     fill_in "Password", with: "sing"
     fill_in "Password confirmation", with: "sing"
-    click_on "Add User"
+    click_on "Create User"
     expect(page).to have_content("Email has already been taken")
   end
 
@@ -55,7 +55,7 @@ feature "users" do
     fill_in "Email", with: "buffalo@bill.com"
     fill_in "Password", with: "yeehaw"
     fill_in "Password confirmation", with: "yeehaw"
-    click_on "Add User"
+    click_on "Create User"
     expect(page).to have_content("Buffalo Bill")
   end
 
@@ -70,6 +70,9 @@ feature "users" do
       click_on "Sign In"
       fill_in "Email", with: "magic@schhoolbus.com"
       fill_in "Password", with: "iguana"
+      within '.well' do
+        click_on "Sign In"
+      end
       expect(page).to have_link("Public Map")
       expect(page).to have_link("Private Map")
       expect(page).to have_link("Sign Out")

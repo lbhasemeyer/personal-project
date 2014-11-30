@@ -7,7 +7,8 @@
   <%= form_for(@user, url: signup_path, html: {class: "form-horizontal"}) do |f| %>
     <div class="container signup well col-sm-offset-3 col-sm-6">
 
-      <h1 class="form-signup-heading text-center">Sign Up for <font color="orange">mucklucks</font></h1>
+      <h1 class="form-signup-heading text-center">Sign Up for
+        <span style="color: orange">mucklucks</span></h1>
 
       <% if @user.errors.present? %>
         <ul class= "list list-unstyled text-danger">
@@ -52,23 +53,15 @@
         </div>
       </div>
 
-      <% if params[:controller] == "registrations" %>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-5">
-            <%= f.submit "Sign Up", class:"auth-button btn btn-default" %>
-          </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-5">
+          <%= f.submit "Sign Up", class:"auth-button btn btn-default" %>
         </div>
-        <div class="form-group">
-          <h2 class="text-center">Already have an account?
-              <%= link_to "Sign In", signin_path %></h2>
-        </div>
-      <% else %>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-5">
-            <%= f.submit class:"auth-button btn btn-default" %>
-          </div>
-        </div>
-      <% end %>
+      </div>
+      <div class="form-group">
+        <h2 class="text-center">Already have an account?
+            <%= link_to "Sign In", signin_path %></h2>
+      </div>
 
     </div>
   <% end %>
