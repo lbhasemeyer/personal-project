@@ -1,2 +1,95 @@
-<center><h1>This is the Public Map!!</h1>
+<% @body_class="public-page" %>
+
+<center><h1>Welcome to the Public Map, <%= "#{current_user.first_name}" %>
+  <%= image_tag current_user.avatar, class: "img-responsive img-thumbnail",
+    size: "120x80" %></h1>
+
 <%= image_tag("TempWorldMap.jpg", :size => "960x550") %></center>
+
+  <div class="col-xs-12 col-sm-12">
+    <h2><font color="orange">mucklucks</font> Users:</h2>
+      <div class="jumbotron text-center pull-right">
+        <div class="col-xs-6 col-lg-4">
+          <h2><font color="orange">mucklucks</font> Blogs:</h2>
+          <p>Read memories, accounts, and stories of users who have been to <font color="red">COUNTRY</font>. </p>
+          <p><a class="btn btn-default" href="#" role="button">Blogs &raquo;</a></p>
+        </div><!--/.col-xs-6.col-lg-4-->
+        <div class="col-xs-6 col-lg-4">
+          <h2><font color="orange">mucklucks</font> Advice:</h2>
+          <p>Glean advice about travel in <font color="red">COUNTRY</font> from the perfect source...travelers. </p>
+          <p><a class="btn btn-default" href="#" role="button">Advice &raquo;</a></p>
+        </div><!--/.col-xs-6.col-lg-4-->
+        <div class="col-xs-6 col-lg-4">
+          <h2><font color="orange">mucklucks</font> Photos:</h2>
+          <p>Peruse through photographs in <font color="red">COUNTRY</font> uploaded and shared by other users. </p>
+          <p><a class="btn btn-default" href="#" role="button">Photos &raquo;</a></p>
+        </div>
+      </div>
+    <h2>General Info:</h2>
+      <div class="jumbotron text-center pull-right">
+        <div class="col-xs-6 col-lg-4">
+          <h2>Wikipedia:</h2>
+          <p>Learn basic information about <font color="red">COUNTRY</font> - written by the public, for the public. </p>
+          <p><a class="btn btn-default" href="#" role="button">Wikipedia &raquo;</a></p>
+        </div>
+        <div class="col-xs-6 col-lg-4">
+          <h2>CDC:</h2>
+          <p>Explore relevant travel information for <font color="red">COUNTRY</font> - including recommended vaccines, medicine, and packing lists. </p>
+          <p><a class="btn btn-default" href="#" role="button">CDC &raquo;</a></p>
+        </div>
+        <div class="col-xs-6 col-lg-4">
+          <h2>travel.state.gov:</h2>
+          <p>Be informed of <font color="red">COUNTRY</font> visa requirements, travel advisories, local heath information, and laws. </p>
+          <p><a class="btn btn-default" href="#" role="button">travel.state.gov &raquo;</a></p>
+        </div>
+      </div>
+    <h2>What to Do / Where to Stay:</h2>
+      <div class="jumbotron text-center pull-right">
+        <div class="col-xs-6 col-lg-4">
+          <h2>TripAdvisor</h2>
+          <p>Peruse an extensive collection of <font color="red">COUNTRY</font> travel reviews.  Reviews include restaurants, hotels, and sites. </p>
+          <p><a class="btn btn-default" href="#" role="button">TripAdvisor &raquo;</a></p>
+        </div>
+        <div class="col-xs-6 col-lg-4">
+          <h2>Couchsurfing:</h2>
+          <p>Stay free in the homes of locals passionate about helping travelers have the best experience possible in <font color="red">COUNTRY</font>. </p>
+          <p><a class="btn btn-default" href="#" role="button">Couchsurfing &raquo;</a></p>
+        </div>
+        <div class="col-xs-6 col-lg-4">
+          <h2>Airbnb:</h2>
+          <p>Get a great rate on a room, apartment, or house from a local in <font color="red">COUNTRY</font>. </p>
+          <p><a class="btn btn-default" href="#" role="button">Airbnb &raquo;</a></p>
+        </div>
+      </div>
+    <h2>Airfare / Weather:</h2>
+      <div class="jumbotron text-center pull-right">
+        <div class="col-xs-6 col-lg-4">
+          <h2>Skyscanner</h2>
+          <p>Search for cheap flights to or from <font color="red">COUNTRY</font> using two of the best airfare sites around. </p>
+          <a class="btn btn-default" href="#" role="button">Skyscanner &raquo;</a></p>
+        </div>
+        <div class="col-xs-6 col-lg-4">
+          <h2>HipMonk</h2>
+          <p>Search for cheap flights to or from <font color="red">COUNTRY</font> using two of the best airfare sites around. </p>
+          <p><a class="btn btn-default" href="#" role="button">Hipmonk &raquo;</a>
+        </div>
+        <div class="col-xs-6 col-lg-4">
+          <h2>Weather:</h2>
+          <p>Explore <font color="red">COUNTRY</font> weather data from the past, as well as current forecasts. </p>
+          <p><a class="btn btn-default" href="#" role="button">Weather &raquo;</a></p>
+        </div><!--/.col-xs-6.col-lg-4-->
+      </div>
+  </div><!--/.col-xs-12.col-sm-9-->
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

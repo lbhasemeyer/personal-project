@@ -1,5 +1,35 @@
-<center><h1>This is the Private Map!!</h1>
+<% @body_class="private-page" %>
 
-<%= image_tag current_user.avatar, class: "img-responsive img-thumbnail" %>
+<center><h1>Welcome to the Private Map, <%= "#{current_user.first_name}" %>
+  <%= image_tag current_user.avatar, class: "img-responsive img-thumbnail",
+    size: "120x80" %></h1>
+<%= image_tag("TempWorldMap.jpg", size: "960x550") %></center>
 
-<%= image_tag("TempWorldMap.jpg", :size => "960x550") %></center>
+<div class="row">
+  <div class="col-sm-3 jumbotron text-center pull-left" style="margin:25px">
+    <h1>Blog</h1><p>Add a link to your blog of <font color="red">COUNTRY</font></p>
+    <p>Share on Public Map?</p>
+  </div>
+  <div class="col-sm-3 jumbotron text-center pull-right" style="margin:25px">
+    <h1>Photos</h1><p>Add photos or a link to your photos in <font color="red">COUNTRY</font></p>
+    <p>Share on Public Map?</p>
+  </div>
+  <div class="col-sm-3 jumbotron text-center pull-left" style="margin:25px">
+    <h1>Sites</h1><p>What were your favorite sites in <font color="red">COUNTRY</font>?</p>
+    <p>Share on Public Map?</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3 jumbotron text-center pull-right" style="margin:25px">
+    <h1>Advice</h1><p>What advice would you give to other travelers in <font color="red">COUNTRY</font>?</p>
+    <p>Share on Public Map?</p>
+  </div>
+  <div class="col-sm-3 jumbotron text-center pull-left" style="margin:25px">
+    <h1>People</h1><p>Who did you travel with / meet in <font color="red">COUNTRY</font>?</p>
+    <p>Share on Public Map?</p>
+  </div>
+  <div class="col-sm-3 jumbotron text-center pull-right" style="margin:25px">
+    <h1>Memories</h1><p>What were your favorite memories in <font color="red">COUNTRY</font>?</p>
+    <p>Share on Public Map?</p>
+  </div>
+</div>
