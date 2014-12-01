@@ -19,35 +19,35 @@
       <% end %>
 
       <div class="form-group">
-        <label class="col-sm-2 control-label">First Name</label>
+          <%= f.label :first_name, class: "control-label col-sm-2" %>
         <div class="col-sm-8">
           <%= f.text_field :first_name, class: "form-control col-sm-4" %>
         </div>
       </div>
 
       <div class="form-group">
-        <label class="col-sm-2 control-label">Last Name</label>
+        <%= f.label :last_name, class: "control-label col-sm-2" %>
         <div class="col-sm-8">
           <%= f.text_field :last_name, class: "form-control col-sm-4" %>
         </div>
       </div>
 
       <div class="form-group">
-        <label class="col-sm-2 control-label">Email</label>
+        <%= f.label :email, class: "control-label col-sm-2" %>
         <div class="col-sm-8">
           <%= f.email_field :email, class: "form-control" %>
         </div>
       </div>
 
       <div class="form-group">
-        <label class="col-sm-2 control-label">Password</label>
+        <%= f.label :password, class: "control-label col-sm-2" %>
         <div class="col-sm-8">
           <%= f.password_field :password, class: "form-control" %>
         </div>
       </div>
 
       <div class="form-group">
-        <label class="col-sm-2 control-label">Password Confirmation</label>
+        <%= f.label :password_confirmation, class: "control-label col-sm-2" %>
         <div class="col-sm-8">
           <%= f.password_field :password_confirmation, class: "form-control" %>
         </div>
