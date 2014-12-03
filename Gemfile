@@ -28,6 +28,10 @@ group :development, :test do
   gem 'rspec-rails'
   gem "capybara"
   gem 'launchy'
+  gem 'byebug'
 end
 
+gem 'dotenv-rails'
 gem 'carrierwave', '~>0.10.0'
+gem 'fog'
+gem 'rmagick', :require => 'RMagick'
