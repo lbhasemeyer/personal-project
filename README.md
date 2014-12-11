@@ -2,7 +2,6 @@
 
 Heroku URL: https://mucklucks.herokuapp.com/
 
-[![Build Status](https://travis-ci.org/lbhasemeyer/personal-project.svg)](https://travis-ci.org/lbhasemeyer/personal-project)
 [![Code Climate](https://codeclimate.com/github/lbhasemeyer/personal-project/badges/gpa.svg)](https://codeclimate.com/github/lbhasemeyer/personal-project)
 
 
