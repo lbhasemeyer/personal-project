@@ -1,6 +1,10 @@
 <% @body_class="private-page" %>
 <% page_title "Private Map" %>
 
+<center><h1>Welcome to the Private Map, <%= "#{current_user.first_name}" %>
+  <%= image_tag current_user.avatar, class: "img-responsive img-thumbnail",
+  size: "120x80" %></h1>
+
 <center><%= image_tag("TempWorldMap.jpg", size: "960x550") %></center></center>
 
 <div class="row">

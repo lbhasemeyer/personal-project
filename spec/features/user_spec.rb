@@ -6,7 +6,7 @@ feature "users" do
       visit root_path
       click_on "Users"
       click_on "Create User"
-      click_on "Create User"
+      click_button "Create User"
       expect(page).to have_content("First name can't be blank")
       expect(page).to have_content("Last name can't be blank")
       expect(page).to have_content("Email can't be blank")
@@ -22,7 +22,7 @@ feature "users" do
       fill_in "Email", with: "anchor@man.com"
       fill_in "Password", with: "sandiego"
       fill_in "Password confirmation", with: "whale"
-      click_on "Create User"
+      click_button "Create User"
       expect(page).to have_content("Password confirmation doesn't match Password")
   end
 
@@ -31,8 +31,8 @@ feature "users" do
       first_name: "Peppe",
       last_name: "Lepeu",
       email: "paris@skunk.com",
-      password: "macherie",
-      )
+      password: "macherie"
+    )
     visit root_path
     click_on "Users"
     click_on "Create User"
@@ -41,7 +41,7 @@ feature "users" do
     fill_in "Email", with: "paris@skunk.com"
     fill_in "Password", with: "sing"
     fill_in "Password confirmation", with: "sing"
-    click_on "Create User"
+    click_button "Create User"
     expect(page).to have_content("Email has already been taken")
   end
 
@@ -55,8 +55,60 @@ feature "users" do
     fill_in "Email", with: "buffalo@bill.com"
     fill_in "Password", with: "yeehaw"
     fill_in "Password confirmation", with: "yeehaw"
-    click_on "Create User"
+    click_button "Create User"
     expect(page).to have_content("Buffalo Bill")
+  end
+
+  scenario "User edits a user" do
+    User.create!(
+      first_name: "Galileo",
+      last_name: "Galilei",
+      email: "look@up.com",
+      password: "science"
+    )
+    visit users_path
+    expect(page).to have_content("Galileo Galilei")
+    find(:xpath, "//tr[contains(.,'Galileo')]/td/a", :text => 'Edit').click
+    fill_in "First name", with: "Barney"
+    fill_in "Last name", with: "Fife"
+    fill_in "Email", with: "someday@sheriff.com"
+    click_button "Update User"
+    expect(page).to have_no_content("Galileo Galilei")
+    expect(page).to have_content("Barney Fife")
+    expect(page).to have_content("someday@sheriff.com")
+  end
+
+  scenario "User deletes a user" do
+    User.create!(
+      first_name: "Jimi",
+      last_name: "Hendrix",
+      email: "johnny@hendrix.com",
+      password: "guitar"
+    )
+    visit users_path
+    expect(page).to have_content("Jimi Hendrix")
+    find(:xpath, "//tr[contains(.,'Jimi')]/td/a", :text => 'Delete').click
+    expect(page).to have_no_content("Jimi Hendrix")
+  end
+
+  scenario "Clicking on user name goes to that user's show page" do
+    User.create!(
+      first_name: "Aaron",
+      last_name: "Carter",
+      email: "aaron@carter.com",
+      password: "sing",
+    )
+    visit root_path
+    click_on "Sign In"
+    fill_in "Email", with: "aaron@carter.com"
+    fill_in "Password", with: "sing"
+    click_button "Sign In"
+    visit users_path
+    expect(page).to have_content("Aaron Carter")
+    click_on "Aaron Carter"
+    expect(page).to have_content("Aaron Carter")
+    expect(page).to have_content("Edit")
+    expect(page).to have_content("Delete")
   end
 
 end
