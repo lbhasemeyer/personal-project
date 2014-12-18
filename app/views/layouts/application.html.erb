@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     <%= stylesheet_link_tag 'application' %>
-    <title>Mucklucks</title>
+    <title><%= "Mucklucks | #{content_for(:title)}"  %></title>
   </head>
 
   <body class="<%= @body_class %>">

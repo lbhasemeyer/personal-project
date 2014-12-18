@@ -7,7 +7,7 @@
   <%= form_for(@user, html: {class: "form-horizontal"}) do |f| %>
     <div class="container signup well col-sm-offset-3 col-sm-6">
 
-      <h1 class="form-signup-heading text-center"><%= title %></h1>
+      <center><%= page_title "#{title}" %></center>
 
       <% if @user.errors.present? %>
         <ul class= "list list-unstyled text-danger">

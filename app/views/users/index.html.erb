@@ -1,20 +1,16 @@
 <% @body_class="users_index-page" %>
 
-  <br>
-  <br>
-  <br>
+<br>
+<br>
+<br>
+<br>
 
   <div class= "container users_page">
-    <table class="table">
-      <h1 class="text-center">Users
-        <div class="pull-right">
-          <%= link_to "Create User", new_user_path,
-              class: "btn btn-default pull-right" %>
-        </div>
-      </h1>
-    </table>
+    <center><%= page_title "Users" do %>
+      <%= link_to "Create User", new_user_path, class: "btn btn-default pull-right" %>
+    <% end %></center>
 
-      <hr>
+    <hr>
 
     <table class="table table-hover">
       <thead>
