@@ -14,3 +14,5 @@
 //= require jquery_ujs
 //= require_tree .
 //= require bootstrap-sprockets
+//= require jquery.vmap
+//= require jquery.vmap.world
