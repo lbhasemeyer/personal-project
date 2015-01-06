@@ -1,5 +1,7 @@
 <% @body_class="users_index-page" %>
 
+<% if current_user.admin? %>
+
 <br>
 <br>
 <br>
@@ -37,7 +39,7 @@
   </table>
 </div>
 
-</body>
+<% end %>
 
 <br>
 <br>

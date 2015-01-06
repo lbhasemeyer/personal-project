@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   var changeCountryColor = function(code){
     var toChange = {};
-    toChange[code] = '#0000ff';
+    toChange[code] = 'orange';
 
     jQuery('#vmap').vectorMap('set', 'colors', toChange);
 
@@ -13,26 +13,26 @@ $(document).ready(function() {
   $('#vmap').vectorMap(
     {
       map: 'world_en',
-      hoverColor: '#c9dfaf',
+      hoverColor: '#d3d3d3',
       onRegionClick: function(element, code, region)
       {
         changeCountryColor(code);
         clickedCountries.push(code);
       },
-      onRegionOver: function(event, code)
-      {
-        if (clickedCountries.includes(code))
-          {
-            event.preventDefault();
-          }
-      },
-      onRegionOut: function(event, code)
-      {
-        if (clickedCountries.includes(code))
-          {
-            event.preventDefault();
-          }
-        },
+      // onRegionOver: function(event, code)
+      // {
+      //   if (clickedCountries.includes(code))
+      //     {
+      //       event.preventDefault();
+      //     }
+      // },
+      // onRegionOut: function(event, code)
+      // {
+      //   if (clickedCountries.includes(code))
+      //     {
+      //       event.preventDefault();
+      //     }
+      //   },
     }
   );
 

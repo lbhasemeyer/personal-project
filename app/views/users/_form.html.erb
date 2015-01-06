@@ -1,5 +1,7 @@
 <% @body_class="users-form-page" %>
 
+<% if current_user.admin? %>
+
   <br>
   <br>
   <br>
@@ -77,7 +79,7 @@
     </div>
   <% end %>
 
-</body>
+<% end %>
 
 <br>
 <br>

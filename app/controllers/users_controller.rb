@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :authorize_admin
+
   def index
     @users = User.all
   end
@@ -11,7 +13,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      session[:user_id] = @user.id
       redirect_to users_path, notice: "#{@user.full_name} was successfully created."
     else
       render :new
@@ -40,6 +41,12 @@ class UsersController < ApplicationController
 
 
   private
+
+  def authorize_admin
+    unless current_user.admin?
+      raise AccessDenied
+    end
+  end
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :avatar, :admin)

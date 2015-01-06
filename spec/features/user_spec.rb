@@ -1,9 +1,33 @@
 require 'rails_helper'
 
 feature "users" do
+  before do
+    User.create!(
+    first_name: "Peppe",
+    last_name: "Lepeu",
+    email: "paris@skunk.com",
+    admin: true,
+    password: "macherie",
+    password_confirmation: "macherie"
+    )
+    User.create!(
+    first_name: "Aaron",
+    last_name: "Carter",
+    email: "aaron@carter.com",
+    admin: false,
+    password: "sing",
+    password_confirmation: "sing",
+    )
+  end
 
-  scenario "User creates a user - blank fields" do
+  scenario "Admin creates a user - blank fields" do
       visit root_path
+      click_on "Sign In"
+      fill_in "Email", with: "paris@skunk.com"
+      fill_in "Password", with: "macherie"
+      within '.well' do
+        click_button "Sign In"
+      end
       click_on "Users"
       click_on "Create User"
       click_button "Create User"
@@ -13,8 +37,14 @@ feature "users" do
       expect(page).to have_content("Password can't be blank")
   end
 
-  scenario "User creates a user - passwords don't match" do
+  scenario "Admin creates a user - passwords don't match" do
       visit root_path
+      click_on "Sign In"
+      fill_in "Email", with: "paris@skunk.com"
+      fill_in "Password", with: "macherie"
+      within '.well' do
+        click_button "Sign In"
+      end
       click_on "Users"
       click_on "Create User"
       fill_in "First name", with: "Ron"
@@ -26,14 +56,14 @@ feature "users" do
       expect(page).to have_content("Password confirmation doesn't match Password")
   end
 
-  scenario "User creates a user - email already in use" do
-    User.create!(
-      first_name: "Peppe",
-      last_name: "Lepeu",
-      email: "paris@skunk.com",
-      password: "macherie"
-    )
+  scenario "Admin creates a user - email already in use" do
     visit root_path
+    click_on "Sign In"
+    fill_in "Email", with: "paris@skunk.com"
+    fill_in "Password", with: "macherie"
+    within '.well' do
+      click_button "Sign In"
+    end
     click_on "Users"
     click_on "Create User"
     fill_in "First name", with: "Weird"
@@ -45,8 +75,14 @@ feature "users" do
     expect(page).to have_content("Email has already been taken")
   end
 
-  scenario "User creates a user - fields corectly filled out" do
+  scenario "Admin creates a user - fields corectly filled out" do
     visit root_path
+    click_on "Sign In"
+    fill_in "Email", with: "paris@skunk.com"
+    fill_in "Password", with: "macherie"
+    within '.well' do
+      click_button "Sign In"
+    end
     click_on "Users"
     expect(page).to have_no_content("Buffalo Bill")
     click_on "Create User"
@@ -59,13 +95,20 @@ feature "users" do
     expect(page).to have_content("Buffalo Bill")
   end
 
-  scenario "User edits a user" do
+  scenario "Admin edits a user" do
     User.create!(
       first_name: "Galileo",
       last_name: "Galilei",
       email: "look@up.com",
       password: "science"
     )
+    visit root_path
+    click_on "Sign In"
+    fill_in "Email", with: "paris@skunk.com"
+    fill_in "Password", with: "macherie"
+    within '.well' do
+      click_button "Sign In"
+    end
     visit users_path
     expect(page).to have_content("Galileo Galilei")
     find(:xpath, "//tr[contains(.,'Galileo')]/td/a", :text => 'Edit').click
@@ -78,31 +121,34 @@ feature "users" do
     expect(page).to have_content("someday@sheriff.com")
   end
 
-  scenario "User deletes a user" do
+  scenario "Admin deletes a user" do
     User.create!(
       first_name: "Jimi",
       last_name: "Hendrix",
       email: "johnny@hendrix.com",
       password: "guitar"
     )
+    visit root_path
+    click_on "Sign In"
+    fill_in "Email", with: "paris@skunk.com"
+    fill_in "Password", with: "macherie"
+    within '.well' do
+      click_button "Sign In"
+    end
     visit users_path
     expect(page).to have_content("Jimi Hendrix")
     find(:xpath, "//tr[contains(.,'Jimi')]/td/a", :text => 'Delete').click
     expect(page).to have_no_content("Jimi Hendrix")
   end
 
-  scenario "Clicking on user name goes to that user's show page" do
-    User.create!(
-      first_name: "Aaron",
-      last_name: "Carter",
-      email: "aaron@carter.com",
-      password: "sing",
-    )
+  scenario "When admin clicks on user name goes to that user's show page" do
     visit root_path
     click_on "Sign In"
-    fill_in "Email", with: "aaron@carter.com"
-    fill_in "Password", with: "sing"
-    click_button "Sign In"
+    fill_in "Email", with: "paris@skunk.com"
+    fill_in "Password", with: "macherie"
+    within '.well' do
+      click_button "Sign In"
+    end
     visit users_path
     expect(page).to have_content("Aaron Carter")
     click_on "Aaron Carter"
