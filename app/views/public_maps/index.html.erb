@@ -1,17 +1,20 @@
 <% @body_class="public-page" %>
 <% page_title "Public Map" %>
 
-<center><h1>Welcome to the Private Map, <%= "#{current_user.first_name}" %>
-  <%= image_tag current_user.avatar, class: "img-responsive img-thumbnail",
-  size: "120x80" %></h1>
-  <div id="vmap"></div>
+<div class="text-center">
+  <h1>Welcome to the Private Map, <%= "#{current_user.first_name}" %>
+    <%= image_tag current_user.avatar, class: "img-responsive img-thumbnail", size: "120x80" %>
+  </h1>
+</div>
 
-  <h2>The public map is all about learning.  Start by clicking on a country.
+  <div id="vmap" class="public_vmap"></div>
+
+  <!-- <h2>Start by clicking on a country.
   <br>You'll notice the below information adjust to your selection.</h2>
 
   <h2>Explore the first box links to gain travel knowledge from
     <font color="orange">mucklucks</font> users who have been there.
-  <br>Below that are links to other trusted travel sites who know their stuff!</h2></center>
+  <br>Below that are links to other trusted travel sites who know their stuff!</h2></center> -->
 
 <div class="col-xs-12 col-sm-12">
   <h2><font color="orange">mucklucks</font> Users:</h2>

@@ -8,11 +8,8 @@ div.jumbotron.private.text-center {
   border-width: 5px;
 }
 
-rect {
-  fill: red !important;
-}
-
-#vmap {
+#vmap.private_vmap {
   width: 1200px;
   height: 800px;
+  margin: auto;
 }

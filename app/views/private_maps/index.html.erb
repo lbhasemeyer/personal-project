@@ -1,20 +1,23 @@
 <% @body_class="private-page" %>
 <% page_title "Private Map" %>
 
-<center><h1>Welcome to the Private Map, <%= "#{current_user.first_name}" %>
-  <%= image_tag current_user.avatar, class: "img-responsive img-thumbnail",
-  size: "120x80" %></h1>
-  <div id="vmap"></div>
+<div class="text-center">
+  <h1>Welcome to the Private Map, <%= "#{current_user.first_name}" %>
+    <%= image_tag current_user.avatar, class: "img-responsive img-thumbnail", size: "120x80" %>
+  </h1>
+</div>
 
-  <h2>This private map is to store your personal travel information.
-    Start by clicking on a country.
-    <br>This country will now stay orange unless
-    it is clicked again, so you can visually see where you've been.
-  <br>You'll notice the below information adjust to your selection.</h2>
+  <div id="vmap" class="private_vmap"></div>
 
+  <!-- <h2>This private map is to store your personal travel information.
+  Start by clicking on a country.
+  <br>You'll notice the below information adjust to your selection.
+  <br>This country will now stay orange unless
+  it is clicked again, so you can visually see the countries you've been to.</h2> -->
+  <!--
   <h2>Add a link, picture, or text and click "save", building your travel profile for that country.
-  <br>You also have the option to share the information in that box on the public map
-  for other <font color="orange">mucklucks</font> users to see!</h2></center>
+  <br>You also have the option to share any information on the public map
+  for other <font color="orange">mucklucks</font> users to see!</h2></center> -->
 
 <div class="row">
   <div class="col-sm-3 jumbotron private text-center pull-left" style="margin:25px">
