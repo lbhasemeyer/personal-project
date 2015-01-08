@@ -1,23 +1,10 @@
-development:
+default: &default
   adapter: postgresql
-  encoding: utf8
-  database: project_development
-  pool: 5
-  username:
-  password:
+
+development:
+  <<: *default
+  database: personal-project_development
 
 test:
-  adapter: postgresql
-  encoding: utf8
-  database: project_test
-  pool: 5
-  username:
-  password:
-
-production:
-  adapter: postgresql
-  encoding: utf8
-  database: project_production
-  pool: 5
-  username:
-  password:
+  <<: *default
+  database: personal-project_development
