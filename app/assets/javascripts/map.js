@@ -37,11 +37,7 @@ $(document).ready(function() {
     map: 'world_en',
     hoverColor: '#d3d3d3',
     selectedColor: 'orange',
-    onRegionClick: function () {
-      console.log("onRegionClick");
-    },
     onRegionSelect: function(event, code, region) {
-      console.log("select");
       console.log(code);
     },
   });
