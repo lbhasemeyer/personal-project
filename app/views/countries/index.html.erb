@@ -1,0 +1,34 @@
+<% @body_class="countries_index-page" %>
+
+
+
+<div class= "container countries_page">
+  <center><%= page_title "Countries" do %>
+    <%= link_to "Create Country", new_country_path, class: "btn btn-default" %>
+    <% end %></center>
+
+    <hr>
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Region</th>
+          <th>Code</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @countries.each do |country| %>
+        <tr>
+          <td><%= country.region %></td>
+          <td><%= country.code %></td>
+          <td><%= link_to "Edit", edit_country_path(country),
+          class:"auth-button btn btn-default" %></td>
+          <td><%= link_to "Delete", country, method: :delete,
+          data: { confirm: "Are you sure?"}, class: "auth-button btn btn-default" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>

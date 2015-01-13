@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :private_maps
   resources :public_maps
+  resources :countries
 
   root "pages#index"
   get "/about" => "pages#about", as: :about
