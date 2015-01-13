@@ -1,5 +1,6 @@
-$(document).ready(function() {
 
+// private map
+$(document).ready(function() {
   var clickedCountries = [];
 
   $('#vmap').vectorMap({
@@ -25,14 +26,18 @@ $(document).ready(function() {
         clickedCountries.splice(index, 1);
       }
       console.log(clickedCountries);
+    },
+    onRegionClick: function(event, code, region) {
+      $(".country_name").html(region);
     }
   });
-
 });
 
 
-$(document).ready(function() {
 
+
+// public map
+$(document).ready(function() {
   $('#vmap2').vectorMap({
     map: 'world_en',
     hoverColor: '#d3d3d3',
@@ -40,44 +45,8 @@ $(document).ready(function() {
     onRegionSelect: function(event, code, region) {
       console.log(code);
     },
+    onRegionClick: function(event, code, region) {
+      $(".country_name").html(region);
+    }
   });
-
 });
-
-
-
-
-
-
-// $(document).ready(function() {
-//
-//   var clickedCountries = [];
-//
-//   $('#vmap').vectorMap({
-//     map: 'world_en',
-//     hoverColor: '#d3d3d3',
-//     selectedColor: 'orange',
-//     multiSelectRegion: true,
-//     onRegionClick: function () {
-//       console.log("onRegionClick");
-//     },
-//     onRegionDeselect: function () {
-//       console.log("deselect");
-//       // jQuery('#vmap').vectorMap('set', 'colors', code, 'white');
-//     },
-//     onRegionSelect: function(event, code, region) {
-//       console.log("select");
-//       // jQuery('#vmap').vectorMap('set', 'colors', code, 'orange');
-//       // var index = clickedCountries.indexOf(code);
-//       // if (index === -1) {
-//       //   clickedCountries.push(code);
-//       // }
-//       // else {
-//       //   jQuery('#vmap').vectorMap('set', 'colors', code, 'white');
-//       //   clickedCountries.splice(index, 1);
-//       // }
-//       // return false;
-//     }
-//   });
-//
-// });

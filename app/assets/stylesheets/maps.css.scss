@@ -1,0 +1,33 @@
+div.jumbotron.public.text-center {
+  background-color: white;
+  border-style: solid;
+  border-color: orange;
+  border-width: 5px;
+}
+
+div.jumbotron.private.text-center {
+  background-color: white;
+  border-style: solid;
+  border-color: orange;
+  border-width: 5px;
+}
+
+#vmap {
+  width: 1200px;
+  height: 800px;
+  margin: auto;
+}
+
+#vmap2 {
+  width: 1200px;
+  height: 800px;
+  margin: auto;
+}
+
+span{
+  color: red;
+}
+
+rect {
+  fill: red !important;
+}
