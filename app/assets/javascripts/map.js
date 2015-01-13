@@ -40,15 +40,12 @@ $(document).ready(function() {
     map: 'world_en',
     hoverColor: '#d3d3d3',
     selectedColor: 'orange',
-    onRegionSelect: function(event, code, region) {
+    onRegionClick: function(event, code, region) {
+      $(".country_name").html(region);
       console.log(code);
-      console.log(region);
     },
     onRegionDeselect: function(event, code, region) {
       $(".country_name").html("COUNTRY");
-    },
-    onRegionClick: function(event, code, region) {
-      $(".country_name").html(region);
     }
   });
 });
