@@ -8,9 +8,6 @@ $(document).ready(function() {
     hoverColor: '#d3d3d3',
     selectedColor: 'orange',
     multiSelectRegion: true,
-    onRegionClick: function () {
-      console.log("onRegionClick");
-    },
     onRegionSelect: function(event, code, region) {
       console.log("select");
       var index = clickedCountries.indexOf(code);
@@ -25,9 +22,10 @@ $(document).ready(function() {
       if (index !== -1) {
         clickedCountries.splice(index, 1);
       }
+      $(".country_name").html("COUNTRY");
       console.log(clickedCountries);
     },
-    onRegionClick: function(event, code, region) {
+    onRegionClick: function(element, code, region) {
       $(".country_name").html(region);
     }
   });
@@ -44,6 +42,10 @@ $(document).ready(function() {
     selectedColor: 'orange',
     onRegionSelect: function(event, code, region) {
       console.log(code);
+      console.log(region);
+    },
+    onRegionDeselect: function(event, code, region) {
+      $(".country_name").html("COUNTRY");
     },
     onRegionClick: function(event, code, region) {
       $(".country_name").html(region);
