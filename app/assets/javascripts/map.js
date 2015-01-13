@@ -1,4 +1,3 @@
-
 // private map
 $(document).ready(function() {
   var clickedCountries = [];
@@ -30,7 +29,6 @@ $(document).ready(function() {
     }
   });
 });
-
 
 
 
