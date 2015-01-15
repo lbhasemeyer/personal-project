@@ -1,5 +1,7 @@
 // private map
 $(document).ready(function() {
+  $(".row.info").hide();
+
   var clickedCountries = [];
 
   $('#vmap').vectorMap({
@@ -14,7 +16,6 @@ $(document).ready(function() {
         clickedCountries.push(code);
       }
       $(".select h1").hide();
-
       console.log(clickedCountries);
     },
     onRegionDeselect: function(event, code, region) {
