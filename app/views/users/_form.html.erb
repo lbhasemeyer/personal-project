@@ -1,88 +1,74 @@
 <% @body_class="users-form-page" %>
 
-  <br>
-  <br>
-  <br>
+<%= form_for(@user, html: {class: "form-horizontal"}) do |f| %>
+  <div class="container signup well col-sm-offset-3 col-sm-6">
 
-  <%= form_for(@user, html: {class: "form-horizontal"}) do |f| %>
-    <div class="container signup well col-sm-offset-3 col-sm-6">
+    <center><%= page_title "#{title}" %></center>
 
-      <center><%= page_title "#{title}" %></center>
+    <% if @user.errors.present? %>
+      <ul class= "list list-unstyled text-danger">
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
 
-      <% if @user.errors.present? %>
-        <ul class= "list list-unstyled text-danger">
-          <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      <% end %>
-
-      <div class="form-group">
-        <label class="col-sm-2 control-label"><%= f.label :first_name %></label>
-        <div class="col-sm-8">
-          <%= f.text_field :first_name, class: "form-control col-sm-4" %>
-        </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label :first_name %></label>
+      <div class="col-sm-8">
+        <%= f.text_field :first_name, class: "form-control col-sm-4" %>
       </div>
-
-      <div class="form-group">
-        <label class="col-sm-2 control-label"><%= f.label :last_name %></label>
-        <div class="col-sm-8">
-          <%= f.text_field :last_name, class: "form-control col-sm-4" %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-sm-2 control-label"><%= f.label :email %></label>
-        <div class="col-sm-8">
-          <%= f.email_field :email, class: "form-control" %>
-        </div>
-      </div>
-
-    <% if @user.id.nil? %>
-      <div class="form-group">
-        <label class="col-sm-2 control-label"><%= f.label :password %></label>
-        <div class="col-sm-8">
-          <%= f.password_field :password, class: "form-control" %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-sm-2 control-label"><%= f.label :password_confirmation %></label>
-        <div class="col-sm-8">
-          <%= f.password_field :password_confirmation, class: "form-control" %>
-        </div>
-      </div>
-      <% end %>
-
-      <div class="form-group">
-        <label class="col-sm-2 control-label"><%= f.label :avatar %></label>
-        <div class="col-sm-8">
-          <%= f.file_field :avatar, class: "form-control" %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-5">
-          <%= f.check_box :admin %>
-          <%= f.label :admin %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-5">
-          <%= f.submit class:"auth-button btn btn-default" %>
-        </div>
-      </div>
-
     </div>
-  <% end %>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label :last_name %></label>
+      <div class="col-sm-8">
+        <%= f.text_field :last_name, class: "form-control col-sm-4" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label :email %></label>
+      <div class="col-sm-8">
+        <%= f.email_field :email, class: "form-control" %>
+      </div>
+    </div>
+
+  <% if @user.id.nil? %>
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label :password %></label>
+      <div class="col-sm-8">
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label :password_confirmation %></label>
+      <div class="col-sm-8">
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+      </div>
+    </div>
+    <% end %>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label :avatar %></label>
+      <div class="col-sm-8">
+        <%= f.file_field :avatar, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-5">
+        <%= f.check_box :admin %>
+        <%= f.label :admin %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-5">
+        <%= f.submit class:"auth-button btn btn-default" %>
+      </div>
+    </div>
+
+  </div>
+<% end %>

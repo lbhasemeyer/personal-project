@@ -1,3 +1,18 @@
+.about-page {
+  background-image: image-url("Everest.jpeg");
+  background-repeat: repeat;
+  background-size: 100%;
+  background-color: white;
+}
+
+div.jumbotron.about.text-center {
+  background-color: white;
+  width: 40%;
+  border-style: solid;
+  border-color: orange;
+  border-width: 5px;
+}
+
 .contact-page {
   background-image: image-url("Bangladesh_Men.jpeg");
   background-repeat: repeat;
@@ -21,4 +36,14 @@ a.disabled {
    pointer-events: none;
    cursor: default;
    color: black;
+}
+
+
+.container.marketing h3 {
+  margin-bottom: 100px;
+}
+
+.row.circle {
+  margin-top: 150px;
+  margin-bottom: 150px;
 }

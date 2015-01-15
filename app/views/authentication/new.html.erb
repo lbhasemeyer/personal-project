@@ -1,54 +1,50 @@
 <% @body_class="authentication-page" %>
 <% page_title "Sign In" %>
 
-  <br>
-  <br>
-  <br>
 
-  <%= form_tag(signin_path) do |f| %>
-    <div class="container signin well col-sm-offset-3 col-sm-6">
 
-      <h1 class="form-signin-heading text-center">Sign Into
-        <span style="color: orange">mucklucks</span></h1>
+<%= form_tag(signin_path) do |f| %>
+  <div class="container signin well col-sm-offset-3 col-sm-6">
 
-      <div class="text-danger">
-        <% if @sign_in_error %>
-          <p><%= @sign_in_error %></p>
-        <% end %>
-      </div>
+    <h1 class="form-signin-heading text-center">Sign Into
+      <span style="color: orange">mucklucks</span></h1>
 
-      <div class="form-group">
-          <label for="email" class="col-sm-2">Email</label>
-        <div class="col-sm-8">
-          <%= email_field_tag :email, nil, class: "form-control col-sm-1 " %>
-        </div>
-      </div>
-
-      <br>
-      <br>
-
-      <div class="form-group">
-          <label for="password" class="col-sm-2">Password</label>
-        <div class="col-sm-8">
-          <%= password_field_tag :password, nil, class: "form-control col-sm-offsetcol-sm-1" %>
-        </div>
-      </div>
-
-      <br>
-      <br>
-
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-5">
-        <%= submit_tag "Sign In", class: "auth-button btn btn-default" %>
-        </div>
-      </div>
-
-      <div>
-        <h2 class="col-sm-offset-1 col-sm-10 text-center">Don't have an account yet?
-          <%= link_to "Sign Up", signup_path %></h2>
-      </div>
-
+    <div class="text-danger">
+      <% if @sign_in_error %>
+        <p><%= @sign_in_error %></p>
+      <% end %>
     </div>
-  <% end %>
 
-</body>
+    <div class="form-group">
+        <label for="email" class="col-sm-2">Email</label>
+      <div class="col-sm-8">
+        <%= email_field_tag :email, nil, class: "form-control col-sm-1 " %>
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="form-group password">
+        <label for="password" class="col-sm-2">Password</label>
+      <div class="col-sm-8">
+        <%= password_field_tag :password, nil, class: "form-control col-sm-offsetcol-sm-1" %>
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-5">
+      <%= submit_tag "Sign In", class: "auth-button btn btn-default" %>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="col-sm-offset-1 col-sm-10 text-center">Don't have an account yet?
+        <%= link_to "Sign Up", signup_path %></h2>
+    </div>
+
+  </div>
+<% end %>

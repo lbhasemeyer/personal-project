@@ -1,87 +1,71 @@
 <% @body_class="registrations-page" %>
 <% page_title "Sign Up" %>
 
-  <br>
-  <br>
-  <br>
+<%= form_for(@user, url: signup_path, html: {class: "form-horizontal"}) do |f| %>
+  <div class="container signup well col-sm-offset-3 col-sm-6">
 
-  <%= form_for(@user, url: signup_path, html: {class: "form-horizontal"}) do |f| %>
-    <div class="container signup well col-sm-offset-3 col-sm-6">
+    <h1 class="form-signup-heading text-center">Sign Up for
+      <span style="color: orange">mucklucks</span></h1>
 
-      <h1 class="form-signup-heading text-center">Sign Up for
-        <span style="color: orange">mucklucks</span></h1>
+    <% if @user.errors.present? %>
+      <ul class= "list list-unstyled text-danger">
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
 
-      <% if @user.errors.present? %>
-        <ul class= "list list-unstyled text-danger">
-          <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      <% end %>
-
-      <div class="form-group">
-          <%= f.label :first_name, class: "control-label col-sm-2" %>
-        <div class="col-sm-8">
-          <%= f.text_field :first_name, class: "form-control col-sm-4" %>
-        </div>
+    <div class="form-group">
+        <%= f.label :first_name, class: "control-label col-sm-2" %>
+      <div class="col-sm-8">
+        <%= f.text_field :first_name, class: "form-control col-sm-4" %>
       </div>
-
-      <div class="form-group">
-        <%= f.label :last_name, class: "control-label col-sm-2" %>
-        <div class="col-sm-8">
-          <%= f.text_field :last_name, class: "form-control col-sm-4" %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :email, class: "control-label col-sm-2" %>
-        <div class="col-sm-8">
-          <%= f.email_field :email, class: "form-control" %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :password, class: "control-label col-sm-2" %>
-        <div class="col-sm-8">
-          <%= f.password_field :password, class: "form-control" %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :password_confirmation, class: "control-label col-sm-2" %>
-        <div class="col-sm-8">
-          <%= f.password_field :password_confirmation, class: "form-control" %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-sm-2 control-label"><%= f.label :avatar %></label>
-        <div class="col-sm-8">
-          <%= f.file_field :avatar, class: "form-control" %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-5">
-          <%= f.submit "Sign Up", class:"auth-button btn btn-default" %>
-        </div>
-      </div>
-      <div class="form-group">
-        <h2 class="text-center">Already have an account?
-            <%= link_to "Sign In", signin_path %></h2>
-      </div>
-
     </div>
-  <% end %>
 
-</body>
+    <div class="form-group">
+      <%= f.label :last_name, class: "control-label col-sm-2" %>
+      <div class="col-sm-8">
+        <%= f.text_field :last_name, class: "form-control col-sm-4" %>
+      </div>
+    </div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    <div class="form-group">
+      <%= f.label :email, class: "control-label col-sm-2" %>
+      <div class="col-sm-8">
+        <%= f.email_field :email, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password, class: "control-label col-sm-2" %>
+      <div class="col-sm-8">
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password_confirmation, class: "control-label col-sm-2" %>
+      <div class="col-sm-8">
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label :avatar %></label>
+      <div class="col-sm-8">
+        <%= f.file_field :avatar, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-5">
+        <%= f.submit "Sign Up", class:"auth-button btn btn-default" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <h2 class="text-center">Already have an account?
+          <%= link_to "Sign In", signin_path %></h2>
+    </div>
+
+  </div>
+<% end %>
