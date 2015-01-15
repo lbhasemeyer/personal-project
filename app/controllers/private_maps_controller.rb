@@ -1,7 +1,7 @@
 class PrivateMapsController < ApplicationController
 
-  def index
-    
+  def create
+    byebug
   end
 
 end

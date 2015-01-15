@@ -28,7 +28,18 @@ $(document).ready(function() {
       $(".country_name").html(region);
     }
   });
-});
+
+  $('#ajax-get').click(function(){
+      $.ajax({
+        url: '/private_maps',
+        type: "POST",
+        data: {countries: clickedCountries},
+        success: function() {
+          alert("this worked!");
+        }
+      })
+    })
+  });
 
 
 
