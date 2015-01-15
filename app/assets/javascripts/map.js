@@ -13,6 +13,8 @@ $(document).ready(function() {
       if (index === -1) {
         clickedCountries.push(code);
       }
+      $(".select h1").hide();
+
       console.log(clickedCountries);
     },
     onRegionDeselect: function(event, code, region) {
@@ -22,9 +24,12 @@ $(document).ready(function() {
         clickedCountries.splice(index, 1);
       }
       $(".country_name").html("COUNTRY");
+      $(".row.info").hide();
+      $(".select h1").show();
       console.log(clickedCountries);
     },
     onRegionClick: function(element, code, region) {
+      $(".row.info").show();
       $(".country_name").html(region);
     }
   });
