@@ -51,16 +51,22 @@ $(document).ready(function() {
 
 // public map
 $(document).ready(function() {
+  $(".information").hide();
   $('#vmap2').vectorMap({
     map: 'world_en',
     hoverColor: '#d3d3d3',
     selectedColor: 'orange',
     onRegionClick: function(event, code, region) {
+      $(".information").show();
       $(".country_name").html(region);
       console.log(code);
     },
+    onRegionSelect: function(event, code, region) {
+      $(".select").hide();
+    },
     onRegionDeselect: function(event, code, region) {
-      $(".country_name").html("COUNTRY");
+      $(".information").hide();
+      $(".select").show();
     }
   });
 });
