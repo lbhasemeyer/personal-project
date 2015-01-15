@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :users
   resources :private_maps
   resources :public_maps
-  resources :countries
 
   root "pages#index"
   get "/about" => "pages#about", as: :about
@@ -14,6 +13,8 @@ Rails.application.routes.draw do
   get "/signin" => "authentication#new", as: :signin
   post "/signin" => "authentication#create"
   get "/signout" => "authentication#destroy", as: :signout
+
+  get "/countries" => "countries#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
