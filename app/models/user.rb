@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: { case_sensitive: false }
   has_secure_password
 
+  has_many :visits
+
   def full_name
     "#{first_name} #{last_name}"
   end
