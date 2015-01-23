@@ -4,6 +4,7 @@ class PrivateMapsController < ApplicationController
 
   def create
     @countries = Country.all
+    @visits = Visit.all
 
     puts "XXXXXXX>X>X>X>X>X>X>..X.x.x"
     puts params
@@ -20,34 +21,9 @@ class PrivateMapsController < ApplicationController
     puts visited_countries
 
     visited_countries.each do |visited_country|
-      Visit.create!(user_id: current_user.id, country_id: visited_country)
+      next if current_user.has_visited?(visited_country)
+        Visit.create!(user_id: current_user.id, country_id: visited_country)
     end
   end
 
 end
-
-
-
-
-
-# class PrivateMapsController < ApplicationController
-#
-#   def create
-#     puts "XXXXXXX>X>X>X>X>X>X>..X.x.x"
-#     puts params
-#     render json: params
-#
-#
-#     visited_countries = []
-#     params[:countries].each do |country|
-#       visited_countries.push(country)
-#     end
-#     puts visited_countries
-#
-#     visited_countries.each do |country|
-#       Visit.create!(user_id: current_user.id, country_id: country.id)
-#     end
-#
-#   end
-#
-# end

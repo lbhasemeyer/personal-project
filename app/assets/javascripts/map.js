@@ -41,7 +41,7 @@ $(document).ready(function() {
         type: "POST",
         data: {countries: clickedCountries},
         success: function() {
-          alert("this worked!");
+          alert("Countries Saved!");
         }
       })
     })
