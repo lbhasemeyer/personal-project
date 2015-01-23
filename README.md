@@ -3,7 +3,7 @@ Heroku URL: https://mucklucks.herokuapp.com/
 
 [![Code Climate](https://codeclimate.com/github/lbhasemeyer/personal-project/badges/gpa.svg)](https://codeclimate.com/github/lbhasemeyer/personal-project)
 
-https://travis-ci.org/lbhasemeyer/personal-project.svg?branch=master
+[![Build Status](https://travis-ci.org/lbhasemeyer/personal-project.svg?branch=master)](https://travis-ci.org/lbhasemeyer/personal-project)
 
 
 This app will satisfy your travel planning, reminiscing, and curiosity needs.  
