@@ -11,19 +11,19 @@ $(document).ready(function() {
     multiSelectRegion: true,
     onRegionSelect: function(event, code, region) {
       console.log("select");
-      var index = clickedCountries.indexOf(code);
-      if (index === -1) {
-        clickedCountries.push(code);
-      }
+        var index = clickedCountries.indexOf(code);
+        if (index === -1) {
+          clickedCountries.push(code);
+        }
       $(".select h1").hide();
       console.log(clickedCountries);
     },
     onRegionDeselect: function(event, code, region) {
       console.log("deselect");
-      var index = clickedCountries.indexOf(code);
-      if (index !== -1) {
-        clickedCountries.splice(index, 1);
-      }
+        var index = clickedCountries.indexOf(code);
+        if (index !== -1) {
+          clickedCountries.splice(index, 1);
+        }
       $(".country_name").html("COUNTRY");
       $(".row.info").hide();
       $(".select h1").show();
@@ -35,17 +35,30 @@ $(document).ready(function() {
     }
   });
 
+//ajax calls for private map - save countries and set clicked countries on load
   $('#ajax-get').click(function(){
-      $.ajax({
-        url: '/private_maps',
-        type: "POST",
-        data: {countries: clickedCountries},
-        success: function() {
-          alert("Countries Saved!");
-        }
-      })
+    $.ajax({
+      url: '/private_maps',
+      type: "POST",
+      data: {countries: clickedCountries},
+      success: function() {
+        alert("Countries Saved!");
+      }
     })
   });
+
+  $.ajax({
+    url: '/clicked',
+    type: "GET",
+    success: function(data) {
+      $.each(data, function( index, value ) {
+        clickedCountries.push(value);
+        $('#vmap').vectorMap('select', value);
+      });
+    }
+  });
+
+});
 
 
 
