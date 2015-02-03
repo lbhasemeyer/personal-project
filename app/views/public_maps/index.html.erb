@@ -3,8 +3,9 @@
 
 <div class="text-center">
   <h1>Welcome to the Public Map, <%= "#{current_user.first_name}" %>
-    <%= image_tag current_user.avatar, class: "img-responsive img-thumbnail", size: "120x80" %>
-  </h1>
+    <% if current_user.avatar.present? %>
+      <%= image_tag current_user.avatar, class: "img-responsive img-thumbnail", size: "120x80" %>
+    <% end %>  </h1>
 </div>
 
 <div class="select">
