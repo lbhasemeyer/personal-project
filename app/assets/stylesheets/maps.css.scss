@@ -1,17 +1,3 @@
-div.jumbotron.public.text-center {
-  background-color: white;
-  border-style: solid;
-  border-color: orange;
-  border-width: 5px;
-}
-
-div.jumbotron.private.text-center {
-  background-color: white;
-  border-style: solid;
-  border-color: orange;
-  border-width: 5px;
-}
-
 #vmap {
   width: 100%;
   height: 600px;
@@ -26,23 +12,67 @@ div.jumbotron.private.text-center {
   margin-bottom: 60px;
 }
 
-span{
-  color: red;
+div.jumbotron.public {
+  background-color: white;
+  border-style: solid;
+  border-color: orange;
+  border-width: 5px;
+  text-align: center;
 }
 
-rect {
-  fill: red !important;
+.row.info {
+  background-color: white;
+  border-style: solid;
+  border-color: orange;
+  border-width: 5px;
+  text-align: center;
+  margin-bottom: 100px;
+  padding: 50px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.row.info p {
+font-size: 21px;
+font-weight: 200;
 }
 
 .jumbotron.public.bottom {
   margin-bottom: 100px;
 }
 
-div.row.info {
-  margin-bottom: 100px;
+div.jumbotron.private:first-of-type {
+  margin-left: 1.6%;
+}
+
+body > div.row.info {
+  margin-left: 20;
+}
+
+span{
+  color: red;
+}
+
+rect {
+  fill: red;
 }
 
 .select h1 {
   text-align: center;
   color: orange;
+}
+
+.ajax-button {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+#ajax-get {
+  background: orange;
+  font-weight: bold;
+  border-radius: 10px;
+  vertical-align: middle;
+  font-size: 17px;
+  padding: 12px 24px;
 }
