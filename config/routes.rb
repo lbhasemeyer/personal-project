@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   get "/clicked" => "private_maps#clicked"
   post "/clicked" => "private_maps#clicked"
 
+  post "/visits" => "visits#create"
+
 end

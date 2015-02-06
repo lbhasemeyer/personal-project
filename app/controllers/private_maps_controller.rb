@@ -1,6 +1,9 @@
 class PrivateMapsController < ApplicationController
 
   ## what countries have they visited and what are those ids?
+  def index
+    @visit = Visit.new
+  end
 
   def create
     @countries = Country.all

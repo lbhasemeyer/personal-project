@@ -1,5 +1,6 @@
 <% @body_class="private-page" %>
 <% page_title "Private Map" %>
+<%= form_for @visit, url: visits_path do |f| %>
 
 <div class="text-center">
   <h1>Welcome to the Private Map, <%= "#{current_user.first_name}" %>
@@ -32,15 +33,35 @@
   <div class="row info">
     <div class="col-xs-6 col-lg-4">
       <h1>Blog</h1><p>Add a link to your blog (or blogs)of <span class="country_name">COUNTRY</span>.</p>
+      <div class="form-group">
+        <%= f.label :blog, class: "col-sm-1" %>
+        <div class="col-sm-4">
+          <%= f.text_field :blog, class: "form-control" %>
+        </div>
+      </div>
       <p>Share on Public Map?</p>
     </div>
     <div class="col-xs-6 col-lg-4">
       <h1>Advice</h1><p>What advice would you give to other travelers in <span class="country_name">COUNTRY</span>?</p>
+      <div class="form-group">
+        <%= f.label :advice, class: "col-sm-1" %>
+        <div class="col-sm-4">
+          <%= f.text_field :advice, class: "form-control" %>
+        </div>
+      </div>
       <p>Share on Public Map?</p>
     </div>
     <div class="col-xs-6 col-lg-4">
       <h1>Photos</h1><p>Add photos or a link to your photos in <span class="country_name">COUNTRY</span>.</p>
+      <div class="form-group">
+        <%= f.label :photo, class: "col-sm-1" %>
+        <div class="col-sm-4">
+          <%= f.text_field :photo, class: "form-control" %>
+        </div>
+      </div>
       <p>Share on Public Map?</p>
     </div>
   </div>
 </div>
+
+<% end %>
