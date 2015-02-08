@@ -47,16 +47,7 @@ $(document).ready(function() {
     })
   });
 
-  $.ajax({
-    url: '/clicked',
-    type: "GET",
-    success: function(data) {
-      $.each(data, function( index, value ) {
-        clickedCountries.push(value);
-        $('#vmap').vectorMap('select', value);
-      });
-    }
-  });
+
 
 });
 
