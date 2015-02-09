@@ -32,6 +32,7 @@ $(document).ready(function() {
     onRegionClick: function(element, code, region) {
       $(".row.info").show();
       $(".country_name").html(region);
+      $(".visit_form_country_code").val(code);
     }
   });
 

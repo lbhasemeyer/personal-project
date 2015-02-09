@@ -1,6 +1,9 @@
 <% @body_class="private-page" %>
 <% page_title "Private Map" %>
-<%= form_for @visit, url: visits_path do |f| %>
+<form id="form_id" action="/visits" method="post">
+
+<input type="hidden" name="visit[country_code]" value="" class="visit_form_country_code">
+<%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
 
 <div class="text-center">
   <h1>Welcome to the Private Map, <%= "#{current_user.first_name}" %>
@@ -30,32 +33,32 @@
     <button id="ajax-get">SAVE</button>
   </div>
   <div class="save-fields">
-    <%= f.submit "SAVE", class:"auth-button btn btn-default" %>
+    <input type="submit">
   </div>
 
   <div class="row info">
     <div class="col-xs-6 col-lg-4">
       <h1>Blog</h1><p>  Add a link to your blog (or blogs) of your time in <span class="country_name">COUNTRY</span>.</p>
       <div>
-        <%= f.text_field :blog, class: "form-control" %>
+        <input type="text_field" name="blog">
       </div>
       <p>Share on Public Map?</p>
     </div>
     <div class="col-xs-6 col-lg-4">
       <h1>Advice</h1><p>What advice would you give to other travelers in <span class="country_name">COUNTRY</span>?</p>
       <div>
-        <%= f.text_field :advice, class: "form-control" %>
+        <input type="text_field" name="advice">
       </div>
       <p>Share on Public Map?</p>
     </div>
     <div class="col-xs-6 col-lg-4">
       <h1>Photos</h1><p>Add photos or a link to your photos of <span class="country_name">COUNTRY</span>.</p>
       <div>
-        <%= f.text_field :photo, class: "form-control" %>
+        <input type="text_field" name="photo">
       </div>
       <p>Share on Public Map?</p>
     </div>
   </div>
 </div>
 
-<% end %>
+</form>

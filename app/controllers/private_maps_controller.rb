@@ -9,7 +9,6 @@ class PrivateMapsController < ApplicationController
     @countries = Country.all
     @visits = Visit.all
 
-    puts "XXXXXXX>X>X>X>X>X>X>..X.x.x"
     puts params
     render json: params
 
