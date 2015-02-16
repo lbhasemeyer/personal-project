@@ -9,9 +9,6 @@ class PrivateMapsController < ApplicationController
     @countries = Country.all
     @visits = Visit.all
 
-    puts params
-    render json: params
-
     visited_countries = []
     params[:countries].each do |clicked_country|
       @countries.each do |country|
@@ -31,6 +28,9 @@ class PrivateMapsController < ApplicationController
         visit.destroy
       end
     end
+
+    # here you need to return json with the blogs in it
+    render json: params
   end
 
   def clicked

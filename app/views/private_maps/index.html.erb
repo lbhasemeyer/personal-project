@@ -19,16 +19,6 @@
 
 <div id="vmap"></div>
 
-  <!-- <h2>This private map is to store your personal travel information.
-  Start by clicking on a country.
-  <br>You'll notice the below information adjust to your selection.
-  <br>This country will now stay orange unless
-  it is clicked again, so you can visually see the countries you've been to.</h2> -->
-  <!--
-  <h2>Add a link, picture, or text and click "save", building your travel profile for that country.
-  <br>You also have the option to share any information on the public map
-  for other <font color="orange">mucklucks</font> users to see!</h2></center> -->
-
   <div class="ajax-button">
     <button id="ajax-get">SAVE</button>
   </div>
@@ -45,7 +35,7 @@
       <p>Share on Public Map?</p>
     </div>
     <div class="col-xs-6 col-lg-4">
-      <h1>Advice</h1><p>What advice would you give to other travelers in <span class="country_name">COUNTRY</span>?</p>
+      <h1>Comments</h1><p>What advice would you give to other travelers in <span class="country_name">COUNTRY</span>?</p>
       <div>
         <input type="text_field" name="advice">
       </div>
@@ -58,6 +48,11 @@
       </div>
       <p>Share on Public Map?</p>
     </div>
+  </div>
+  <div class="show-list-visited">
+    <% current_user.visits.each do |visit| %>
+      <%= link_to visit.country.region, visit_path(visit) %>
+    <% end %>
   </div>
 </div>
 
