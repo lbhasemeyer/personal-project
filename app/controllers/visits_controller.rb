@@ -15,9 +15,9 @@ class VisitsController < ApplicationController
     saved = blog.save && comment.save && photo.save
 
     if saved
-      redirect_to private_maps_path, notice: "YAAAY"
+      redirect_to private_maps_path, notice: "Country Info Was Successfully Saved"
     else
-      redirect_to private_maps_path, notice: "BOOO"
+      redirect_to private_maps_path, notice: "Oops, There Was a Problem.  Please Try Again."
     end
 
   end

@@ -35,9 +35,9 @@
       <p>Share on Public Map?</p>
     </div>
     <div class="col-xs-6 col-lg-4">
-      <h1>Comments</h1><p>What advice would you give to other travelers in <span class="country_name">COUNTRY</span>?</p>
+      <h1>Advice</h1><p>What advice would you give to other travelers in <span class="country_name">COUNTRY</span>?</p>
       <div>
-        <input type="text_field" name="advice">
+        <input type="text_field" name="comment">
       </div>
       <p>Share on Public Map?</p>
     </div>
@@ -51,7 +51,7 @@
   </div>
   <div class="show-list-visited">
     <% current_user.visits.each do |visit| %>
-      <%= link_to visit.country.region, visit_path(visit) %>
+      <h1><%= link_to visit.country.region, visit_path(visit) %></h1>
     <% end %>
   </div>
 </div>
