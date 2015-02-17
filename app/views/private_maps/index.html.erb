@@ -19,41 +19,41 @@
 
 <div id="vmap"></div>
 
-  <div class="ajax-button">
-    <button id="ajax-get">SAVE</button>
-  </div>
-  <div class="save-fields">
-    <input type="submit">
-  </div>
-
   <div class="row info">
     <div class="col-xs-6 col-lg-4">
       <h1>Blog</h1><p>  Add a link to your blog (or blogs) of your time in <span class="country_name">COUNTRY</span>.</p>
       <div>
         <input type="text_field" name="blog">
       </div>
-      <p>Share on Public Map?</p>
     </div>
     <div class="col-xs-6 col-lg-4">
       <h1>Advice</h1><p>What advice would you give to other travelers in <span class="country_name">COUNTRY</span>?</p>
       <div>
-        <input type="text_field" name="comment">
+        <textarea name="comment" rows="8" cols="40"></textarea>
       </div>
-      <p>Share on Public Map?</p>
     </div>
     <div class="col-xs-6 col-lg-4">
       <h1>Photos</h1><p>Add photos or a link to your photos of <span class="country_name">COUNTRY</span>.</p>
       <div>
-        <input type="text_field" name="photo">
+        <input type="file" name="photo" class="photo-input">
+        <!-- <input type="text_field" name="photo"> -->
       </div>
-      <p>Share on Public Map?</p>
     </div>
   </div>
-  <div class="show-list-visited">
-    <% current_user.visits.each do |visit| %>
-      <h1><%= link_to visit.country.region, visit_path(visit) %></h1>
-    <% end %>
+
+  <div class="ajax-button save-fields">
+    <button id="ajax-get"><input type="submit"></button>
   </div>
+
+  <div class="row-list">
+    <div class="show-list-visited">
+      <h2 class="center">You have been to:</h2>
+      <% current_user.visits.each do |visit| %>
+        <h4><%= link_to visit.country.region, visit_path(visit) %></h4>
+      <% end %>
+    </div>
+  </div>
+
 </div>
 
 </form>

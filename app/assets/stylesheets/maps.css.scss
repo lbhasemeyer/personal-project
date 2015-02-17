@@ -26,10 +26,31 @@ div.jumbotron.public {
   border-color: orange;
   border-width: 5px;
   text-align: center;
-  margin-bottom: 100px;
-  padding: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
   margin-right: 15px;
   margin-left: 15px;
+}
+
+#form_id > div.ajax-button.save-fields {
+  margin-top: 10px;
+}
+
+.row-list {
+  background-color: white;
+  border-style: solid;
+  border-color: orange;
+  border-width: 5px;
+  margin-bottom: 100px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.center {
+  text-align: center;
 }
 
 .row.info p {
@@ -90,7 +111,6 @@ rect {
 }
 
 .show-list-visited {
-  margin-bottom: 100px;
 }
 
 .photo-input {
