@@ -33,10 +33,6 @@ div.jumbotron.public {
   margin-left: 15px;
 }
 
-#form_id > div.ajax-button.save-fields {
-  margin-top: 10px;
-}
-
 .row-list {
   background-color: white;
   border-style: solid;
@@ -74,13 +70,13 @@ span{
   color: red;
 }
 
-rect {
-  fill: red;
-}
-
 .select h1 {
   text-align: center;
   color: orange;
+}
+
+.save-fields {
+  text-align: center;
 }
 
 .ajax-button {
@@ -102,15 +98,12 @@ rect {
   border: none;
 }
 
-.save-fields {
-  text-align: center;
+#form_id > div.ajax-button.save-fields {
+  margin-top: 10px;
 }
 
 .country-show-title {
   text-align: center;
-}
-
-.show-list-visited {
 }
 
 .photo-input {

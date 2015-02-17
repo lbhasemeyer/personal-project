@@ -46,7 +46,7 @@
   </div>
 
   <div class="row-list">
-    <div class="show-list-visited">
+    <div>
       <h2 class="center">You have been to:</h2>
       <% current_user.visits.each do |visit| %>
         <h4><%= link_to visit.country.region, visit_path(visit) %></h4>
