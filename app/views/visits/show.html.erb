@@ -1,22 +1,25 @@
 <h2 class="country-show-title"><%= current_user.first_name %>'s Time in <%= @visit.country.region %></h2>
 
-<div class="blogs-show">
-  <h3>My blogs in <%= @visit.country.region %>:</h3>
-  <% @visit.blogs.each do |blog| %>
-    <p><%= blog.site %></p>
-  <% end %>
-</div>
-
 <div class="advice-show">
-  <h3>My advice for other people traveling to <%= @visit.country.region %>:</h3>
+  <h3>Advice</h3>
   <% @visit.comments.each do |comment| %>
     <p><%= comment.comment %></p>
   <% end %>
 </div>
 
-<div class="photos-show">
-  <h3>My photos from <%= @visit.country.region %>:</h3>
-  <% @visit.photos.each do |photo| %>
-    <p><%= photo.photo %></p>
+<div class="blog-show">
+  <h3>Blog</h3>
+  <% @visit.blogs.each do |blog| %>
+    <a class="blog-site" href="<%= "http://#{blog.site}" %>"><%= blog.site %></a>
   <% end %>
 </div>
+
+<div class="photos-show">
+  <h3>Photos</h3>
+  <% @visit.photos.each do |photo| %>
+    <!-- <%= link_to (image_tag image_url("#{photo.photo}").to_s) %> -->
+    <%= image_tag photo.photo %>
+  <% end %>
+</div>
+
+<!-- <%= image_tag current_user.avatar, class: "img-responsive img-thumbnail", size: "120x80" %> -->
