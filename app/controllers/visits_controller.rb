@@ -19,7 +19,6 @@ class VisitsController < ApplicationController
     else
       redirect_to private_maps_path, notice: "Oops, There Was a Problem.  Please Try Again."
     end
-
   end
 
   def show

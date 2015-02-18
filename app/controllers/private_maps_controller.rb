@@ -23,9 +23,10 @@ class PrivateMapsController < ApplicationController
       Visit.create!(user_id: current_user.id, country_id: visited_country)
     end
 
+    # if visit is not in the visited_country array, delete it.
     current_user.visits.each do |visit|
-      unless params[:countries].include?(visit.country.code.downcase)
-        visit.destroy
+      if !params[:countries].include?(visit.country.code.downcase)
+        visit.destroy!
       end
     end
 
