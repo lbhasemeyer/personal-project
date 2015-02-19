@@ -45,7 +45,8 @@ $(document).ready(function() {
       success: function() {
         alert("Countries Saved!");
       }
-    })
+    });
+    return false;
   });
 
   $.ajax({
