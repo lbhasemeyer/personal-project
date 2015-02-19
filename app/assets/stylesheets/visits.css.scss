@@ -7,7 +7,7 @@
 
 .country-show-title {
   margin-top: 4%;
-  margin-bottom: 6%;
+  margin-bottom: 2%;
 }
 
 .blog-show {
@@ -28,7 +28,7 @@
   border: 5px solid orange;
   display: inline-block;
   width: 60%;
-  min-height: 30%;
+  min-height: 27%;
   margin-bottom: 3%;
   margin-right: 3%;
   margin-left: 2%;
@@ -43,7 +43,7 @@
   width: 80%;
   margin: auto;
   min-height: 25%;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
   padding-right: 20px;
   padding-left: 20px;
   padding-bottom: 20px;
@@ -51,8 +51,30 @@
 
 .photo-show {
   max-width: 300px;
+  max-height: 300px;
 }
 
 .advice-show h3, .blog-show h3, .photos-show h3 {
   text-align: center;
+}
+
+.row.info {
+  background-color: white;
+  border: 5px solid orange;
+  text-align: center;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 75px;
+}
+
+.submit-fields {
+  background: orange;
+  font-weight: bold;
+  border-radius: 10px;
+  vertical-align: middle;
+  font-size: 17px;
+  padding: 12px 24px;
 }

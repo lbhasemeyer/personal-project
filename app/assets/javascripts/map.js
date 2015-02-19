@@ -1,6 +1,5 @@
 // private map
 $(document).ready(function() {
-  $(".row.info").hide();
 
   var clickedCountries = [];
 
@@ -25,12 +24,10 @@ $(document).ready(function() {
           clickedCountries.splice(index, 1);
         }
       $(".country_name").html("COUNTRY");
-      $(".row.info").hide();
       $(".select h1").show();
       console.log(clickedCountries);
     },
     onRegionClick: function(element, code, region) {
-      $(".row.info").show();
       $(".country_name").html(region);
       $(".visit_form_country_code").val(code);
     }
@@ -46,6 +43,7 @@ $(document).ready(function() {
         alert("Countries Saved!");
       }
     });
+    return false;
   });
 
   $.ajax({

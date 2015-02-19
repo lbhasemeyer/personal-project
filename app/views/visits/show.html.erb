@@ -1,5 +1,8 @@
 <% @body_class="visit-page" %>
 <% page_title @visit.country.region %>
+<!-- <form id="form_id" action="/visits/" method="patch" enctype="multipart/form-data">
+<%= hidden_field_tag :authenticity_token, form_authenticity_token -%> -->
+
 
 <h2 class="country-show-title"><%= current_user.first_name %>'s Time in <%= @visit.country.region %></h2>
 
@@ -21,5 +24,32 @@
   <h3>Photos</h3>
   <% @visit.photos.each do |photo| %>
     <%= image_tag photo.photo, class: "photo-show" %>
+  <% end %>
+</div>
+
+<div class="row info">
+  <%= form_for @visit, :html => {:multipart => true} do |f| %>
+    <div class="col-xs-6 col-lg-4">
+      <h1>Blog</h1><p>  Add a link to a blog of your time in <%= @visit.country.region %>.</p>
+      <div>
+        <input type="text_field" maxlength="250" name="blog">
+      </div>
+    </div>
+
+    <div class="col-xs-6 col-lg-4">
+      <h1>Advice</h1><p>What advice would you give to other travelers in <%= @visit.country.region %>?</p>
+      <div>
+        <textarea name="comment" rows="8" cols="40"></textarea>
+      </div>
+      <input type="submit" class="submit-fields">
+    </div>
+
+    <div class="col-xs-6 col-lg-4">
+      <h1>Photos</h1><p>Add photos from your time in <%= @visit.country.region %>.</p>
+      <div>
+        <input type="file" name="photo" class="photo-input">
+      </div>
+    </div>
+
   <% end %>
 </div>

@@ -9,12 +9,6 @@ class VisitsController < ApplicationController
       Visit.create!(country_id: country.id, user_id: current_user.id)
     end
 
-    blog = Blog.new(visit_id: visit.id, site: params[:blog])
-    comment = Comment.new(visit_id: visit.id, comment: params[:comment])
-    photo = Photo.new(visit_id: visit.id, photo: params[:photo])
-
-    saved = blog.save && comment.save && photo.save
-
     if saved
       redirect_to private_maps_path, notice: "Country Info Was Successfully Saved"
     else
@@ -25,5 +19,18 @@ class VisitsController < ApplicationController
   def show
     @visit = Visit.find(params[:id])
   end
+
+  def update
+    @visit = Visit.find(params[:id])
+    blog = Blog.new(visit_id: @visit.id, site: params[:blog])
+    comment = Comment.new(visit_id: @visit.id, comment: params[:comment])
+    photo = Photo.new(visit_id: @visit.id, photo: params[:photo])
+    if blog.save && comment.save && photo.save
+      redirect_to visit_path(@visit)
+    else
+      redirect_to root_path
+    end
+  end
+
 
 end
