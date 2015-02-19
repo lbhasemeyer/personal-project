@@ -20,6 +20,6 @@
 <div class="photos-show">
   <h3>Photos</h3>
   <% @visit.photos.each do |photo| %>
-    <%= image_tag photo.photo %>
+    <%= image_tag photo.photo, class: "photo-show" %>
   <% end %>
 </div>
