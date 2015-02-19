@@ -1,6 +1,6 @@
 <% @body_class="private-page" %>
 <% page_title "Private Map" %>
-<form id="form_id" action="/visits" method="post">
+<form id="form_id" action="/visits" method="post" enctype="multipart/form-data">
 
 <input type="hidden" name="visit[country_code]" value="" class="visit_form_country_code">
 <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
@@ -32,11 +32,11 @@
         <textarea name="comment" rows="8" cols="40"></textarea>
       </div>
     </div>
+
     <div class="col-xs-6 col-lg-4">
       <h1>Photos</h1><p>Add photos from your time in <span class="country_name">COUNTRY</span>.</p>
       <div>
         <input type="file" name="photo" class="photo-input">
-        <!-- <input type="text_field" name="photo"> -->
       </div>
     </div>
   </div>

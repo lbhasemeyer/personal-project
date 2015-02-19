@@ -8,6 +8,7 @@ class VisitsController < ApplicationController
     else
       Visit.create!(country_id: country.id, user_id: current_user.id)
     end
+
     blog = Blog.new(visit_id: visit.id, site: params[:blog])
     comment = Comment.new(visit_id: visit.id, comment: params[:comment])
     photo = Photo.new(visit_id: visit.id, photo: params[:photo])
