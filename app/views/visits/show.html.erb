@@ -6,11 +6,22 @@
 
 <h2 class="country-show-title"><%= current_user.first_name %>'s Time in <%= @visit.country.region %></h2>
 
+
+  <%= form_for @visit, :html => {:multipart => true} do |f| %>
+
 <div class="advice-show">
   <h3>Advice</h3>
   <% @visit.comments.each do |comment| %>
     <p><%= comment.comment %></p>
   <% end %>
+  <div class="add-fields">
+    <div class="field">
+      <textarea name="comment" rows="8" cols="40" class="advice-field"></textarea>
+    </div>
+    <div class="submit-field-area">
+      <input type="submit" class="submit-field">
+    </div>
+  </div>
 </div>
 
 <div class="blog-show">
@@ -18,6 +29,14 @@
   <% @visit.blogs.each do |blog| %>
     <a class="blog-site" href="<%= "http://#{blog.site}" %>"><%= blog.site %></a>
   <% end %>
+  <div class="add-fields">
+    <div class="field">
+      <input type="text_field" maxlength="250" name="blog">
+    </div>
+    <div class="submit-field-area">
+      <input type="submit" class="submit-field">
+    </div>
+  </div>
 </div>
 
 <div class="photos-show">
@@ -25,31 +44,14 @@
   <% @visit.photos.each do |photo| %>
     <%= image_tag photo.photo, class: "photo-show" %>
   <% end %>
+  <div class="add-fields">
+    <div class="field">
+      <input type="file" name="photo" class="photo-input">
+    </div>
+    <div class="submit-field-area">
+      <input type="submit" class="submit-field">
+    </div>
+  </div>
 </div>
 
-<div class="row info">
-  <%= form_for @visit, :html => {:multipart => true} do |f| %>
-    <div class="col-xs-6 col-lg-4">
-      <h1>Blog</h1><p>  Add a link to a blog of your time in <%= @visit.country.region %>.</p>
-      <div>
-        <input type="text_field" maxlength="250" name="blog">
-      </div>
-    </div>
-
-    <div class="col-xs-6 col-lg-4">
-      <h1>Advice</h1><p>What advice would you give to other travelers in <%= @visit.country.region %>?</p>
-      <div>
-        <textarea name="comment" rows="8" cols="40"></textarea>
-      </div>
-      <input type="submit" class="submit-fields">
-    </div>
-
-    <div class="col-xs-6 col-lg-4">
-      <h1>Photos</h1><p>Add photos from your time in <%= @visit.country.region %>.</p>
-      <div>
-        <input type="file" name="photo" class="photo-input">
-      </div>
-    </div>
-
-  <% end %>
-</div>
+<% end %>

@@ -72,6 +72,18 @@ $(document).ready(function() {
       $(".information").show();
       $(".country_name").html(region);
       console.log(code);
+
+        var cells = [];
+        var rows = $("#myTable").dataTable().fnGetNodes();
+        for(var i=0; i<rows.length; i++)
+        {
+          // Get HTML of 3rd column (for example)
+          cells.push($(rows[i]).find("td:eq(2)").html());
+        }
+        console.log(cells);
+
+
+      $(".show-blogs").html(code);
     },
     onRegionSelect: function(event, code, region) {
       $(".select").hide();
