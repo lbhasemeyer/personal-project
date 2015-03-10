@@ -12,6 +12,4 @@ Rails version: 4.1.6
 Run tests by typing 'rspec' in the command line.  
 
 
-
-
 Mucklucks will satisfy your travel planning, reminiscing, and curiosity needs.  The site has a private world map where you can mark the places you've been. Users have the ability to add their own photos/blogs/advice to each country.  This information is then added to a public map, where users can read through travel advice from other globe-trotters.
