@@ -73,18 +73,30 @@ $(document).ready(function() {
       $(".country_name").html(region);
       console.log(code);
 
-        var cells = [];
-        var rows = $("#myTable").dataTable().fnGetNodes();
-        for(var i=0; i<rows.length; i++)
-        {
-          // Get HTML of 3rd column (for example)
-          cells.push($(rows[i]).find("td:eq(2)").html());
+      $.ajax({
+        url: '/country_info/' + code,
+        type: "GET",
+        success: function(data) {
+          console.log(data);
+
+          for (var i=0; i < data.photos.length; i++) {
+            $(".photos").append("<div>" + data.photos[i].photo.url + "</div><br>");
+          }
+
+          for (var i=0; i < data.comments.length; i++) {
+            $(".comments").append("<div>" + data.comments[i].comment + "</div><br>");
+          }
+
+          for (var i=0; i < data.blogs.length; i++) {
+            $(".blogs").append("<div>" + data.blogs[i].site + "</div><br>");
+          }
+
         }
-        console.log(cells);
+      });
 
 
-      $(".show-blogs").html(code);
     },
+
     onRegionSelect: function(event, code, region) {
       $(".select").hide();
     },

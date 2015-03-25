@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :private_maps
-  resources :public_maps
+  # resources :public_maps
   resources :visits
 
   root "pages#index"
@@ -20,6 +20,6 @@ Rails.application.routes.draw do
   get "/clicked" => "private_maps#clicked"
   post "/clicked" => "private_maps#clicked"
 
-  post "/visits" => "visits#create"
-
+  get "/public_maps" => "public_maps#index"
+  get "/country_info/:code" => "public_maps#get_things"
 end
