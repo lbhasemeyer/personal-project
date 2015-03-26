@@ -22,14 +22,19 @@ class VisitsController < ApplicationController
 
   def update
     @visit = Visit.find(params[:id])
-    blog = Blog.new(visit_id: @visit.id, site: params[:blog])
-    comment = Comment.new(visit_id: @visit.id, comment: params[:comment])
-    photo = Photo.new(visit_id: @visit.id, photo: params[:photo])
-    if blog.save && comment.save && photo.save
-      redirect_to visit_path(@visit)
-    else
-      redirect_to root_path
+    unless params[:blog] == ""
+      blog = Blog.new(visit_id: @visit.id, site: params[:blog])
+      blog.save
     end
+    unless params[:comment].nil?
+      comment = Comment.new(visit_id: @visit.id, comment: params[:comment])
+      comment.save
+    end
+    unless params[:photo].nil?
+      photo = Photo.new(visit_id: @visit.id, photo: params[:photo])
+      photo.save
+    end
+    redirect_to visit_path(@visit)
   end
 
 
