@@ -41,6 +41,7 @@ $(document).ready(function() {
       data: {countries: clickedCountries},
       success: function() {
         alert("Countries Saved!");
+        window.location.reload(true);
       }
     });
     return false;
@@ -78,19 +79,15 @@ $(document).ready(function() {
         type: "GET",
         success: function(data) {
           console.log(data);
-
           for (var i=0; i < data.blogs.length; i++) {
             $(".blogs").append("<div>" + data.blogs[i].site + "</div><br>");
           }
-
           for (var i=0; i < data.comments.length; i++) {
             $(".comments").append("<div>" + data.comments[i].comment + "</div><br>");
           }
-
           for (var i=0; i < data.photos.length; i++) {
             $(".photos").append("<img src='" + data.photos[i].photo.url + "', class='photo-show'><br>");
           }
-
         }
       });
 
