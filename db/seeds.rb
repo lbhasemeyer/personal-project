@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Country.delete_all
+
 countries = "AE = United Arab Emirates
 AF = Afghanistan
 AG = Antigua and Barbuda

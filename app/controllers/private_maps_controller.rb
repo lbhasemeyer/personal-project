@@ -23,15 +23,16 @@ class PrivateMapsController < ApplicationController
       Visit.create!(user_id: current_user.id, country_id: visited_country)
     end
 
-    # if visit is not in the visited_country array, delete it.
     current_user.visits.each do |visit|
       if !params[:countries].include?(visit.country.code.downcase)
         visit.destroy!
       end
     end
 
-    # here you need to return json with the blogs in it
+    # return json for the javascript ajax calls
     render json: params
+    # render js: "window.location.pathname='#{jobs_path}'"
+    # format.json { render :json => {:result => 'success',  :redirect => root_path } }
   end
 
   def clicked

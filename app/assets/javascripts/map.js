@@ -79,16 +79,16 @@ $(document).ready(function() {
         success: function(data) {
           console.log(data);
 
-          for (var i=0; i < data.photos.length; i++) {
-            $(".photos").append("<div>" + data.photos[i].photo.url + "</div><br>");
+          for (var i=0; i < data.blogs.length; i++) {
+            $(".blogs").append("<div>" + data.blogs[i].site + "</div><br>");
           }
 
           for (var i=0; i < data.comments.length; i++) {
             $(".comments").append("<div>" + data.comments[i].comment + "</div><br>");
           }
 
-          for (var i=0; i < data.blogs.length; i++) {
-            $(".blogs").append("<div>" + data.blogs[i].site + "</div><br>");
+          for (var i=0; i < data.photos.length; i++) {
+            $(".photos").append("<img src='" + data.photos[i].photo.url + "', class='photo-show'><br>");
           }
 
         }
